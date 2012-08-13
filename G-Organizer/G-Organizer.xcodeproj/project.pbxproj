@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71615D9921600C20098 /* UIKit.framework */; };
+		50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71815D9921600C20098 /* Foundation.framework */; };
+		50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71A15D9921600C20098 /* CoreGraphics.framework */; };
+		50B1D72115D9921600C20098 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50B1D71F15D9921600C20098 /* InfoPlist.strings */; };
+		50B1D72315D9921600C20098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72215D9921600C20098 /* main.m */; };
+		50B1D72715D9921600C20098 /* organizerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72615D9921600C20098 /* organizerAppDelegate.m */; };
+		50B1D72A15D9921600C20098 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B1D72815D9921600C20098 /* MainStoryboard.storyboard */; };
+		50B1D72D15D9921600C20098 /* organizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72C15D9921600C20098 /* organizerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50B1D71215D9921500C20098 /* G-Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B1D71615D9921600C20098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50B1D71815D9921600C20098 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50B1D71A15D9921600C20098 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50B1D71E15D9921600C20098 /* G-Organizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "G-Organizer-Info.plist"; sourceTree = "<group>"; };
+		50B1D72015D9921600C20098 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50B1D72215D9921600C20098 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50B1D72415D9921600C20098 /* G-Organizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "G-Organizer-Prefix.pch"; sourceTree = "<group>"; };
+		50B1D72515D9921600C20098 /* organizerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = organizerAppDelegate.h; sourceTree = "<group>"; };
+		50B1D72615D9921600C20098 /* organizerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = organizerAppDelegate.m; sourceTree = "<group>"; };
+		50B1D72915D9921600C20098 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		50B1D72B15D9921600C20098 /* organizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = organizerViewController.h; sourceTree = "<group>"; };
+		50B1D72C15D9921600C20098 /* organizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = organizerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50B1D70F15D9921500C20098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */,
+				50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */,
+				50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50B1D70715D9921500C20098 = {
+			isa = PBXGroup;
+			children = (
+				50B1D71C15D9921600C20098 /* G-Organizer */,
+				50B1D71515D9921500C20098 /* Frameworks */,
+				50B1D71315D9921500C20098 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50B1D71315D9921500C20098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50B1D71215D9921500C20098 /* G-Organizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50B1D71515D9921500C20098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B1D71615D9921600C20098 /* UIKit.framework */,
+				50B1D71815D9921600C20098 /* Foundation.framework */,
+				50B1D71A15D9921600C20098 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50B1D71C15D9921600C20098 /* G-Organizer */ = {
+			isa = PBXGroup;
+			children = (
+				50B1D72515D9921600C20098 /* organizerAppDelegate.h */,
+				50B1D72615D9921600C20098 /* organizerAppDelegate.m */,
+				50B1D72815D9921600C20098 /* MainStoryboard.storyboard */,
+				50B1D72B15D9921600C20098 /* organizerViewController.h */,
+				50B1D72C15D9921600C20098 /* organizerViewController.m */,
+				50B1D71D15D9921600C20098 /* Supporting Files */,
+			);
+			path = "G-Organizer";
+			sourceTree = "<group>";
+		};
+		50B1D71D15D9921600C20098 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50B1D71E15D9921600C20098 /* G-Organizer-Info.plist */,
+				50B1D71F15D9921600C20098 /* InfoPlist.strings */,
+				50B1D72215D9921600C20098 /* main.m */,
+				50B1D72415D9921600C20098 /* G-Organizer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50B1D71115D9921500C20098 /* G-Organizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B1D73015D9921600C20098 /* Build configuration list for PBXNativeTarget "G-Organizer" */;
+			buildPhases = (
+				50B1D70E15D9921500C20098 /* Sources */,
+				50B1D70F15D9921500C20098 /* Frameworks */,
+				50B1D71015D9921500C20098 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "G-Organizer";
+			productName = "G-Organizer";
+			productReference = 50B1D71215D9921500C20098 /* G-Organizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50B1D70915D9921500C20098 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = organizer;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Max Tymchii";
+			};
+			buildConfigurationList = 50B1D70C15D9921500C20098 /* Build configuration list for PBXProject "G-Organizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50B1D70715D9921500C20098;
+			productRefGroup = 50B1D71315D9921500C20098 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50B1D71115D9921500C20098 /* G-Organizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50B1D71015D9921500C20098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B1D72115D9921600C20098 /* InfoPlist.strings in Resources */,
+				50B1D72A15D9921600C20098 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50B1D70E15D9921500C20098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B1D72315D9921600C20098 /* main.m in Sources */,
+				50B1D72715D9921600C20098 /* organizerAppDelegate.m in Sources */,
+				50B1D72D15D9921600C20098 /* organizerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50B1D71F15D9921600C20098 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50B1D72015D9921600C20098 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50B1D72815D9921600C20098 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50B1D72915D9921600C20098 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50B1D72E15D9921600C20098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50B1D72F15D9921600C20098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50B1D73115D9921600C20098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "G-Organizer/G-Organizer-Prefix.pch";
+				INFOPLIST_FILE = "G-Organizer/G-Organizer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50B1D73215D9921600C20098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "G-Organizer/G-Organizer-Prefix.pch";
+				INFOPLIST_FILE = "G-Organizer/G-Organizer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50B1D70C15D9921500C20098 /* Build configuration list for PBXProject "G-Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B1D72E15D9921600C20098 /* Debug */,
+				50B1D72F15D9921600C20098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50B1D73015D9921600C20098 /* Build configuration list for PBXNativeTarget "G-Organizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B1D73115D9921600C20098 /* Debug */,
+				50B1D73215D9921600C20098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50B1D70915D9921500C20098 /* Project object */;
+}
