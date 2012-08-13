@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5043680815D995F100596DEC /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5043680715D995F100596DEC /* TapkuLibrary.bundle */; };
+		5043680C15D9963300596DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680B15D9963300596DEC /* QuartzCore.framework */; };
+		5043680D15D9963800596DEC /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680315D995DB00596DEC /* libTapkuLibrary.a */; };
+		5043680F15D9964200596DEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680E15D9964200596DEC /* MapKit.framework */; };
 		50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71615D9921600C20098 /* UIKit.framework */; };
 		50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71815D9921600C20098 /* Foundation.framework */; };
 		50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71A15D9921600C20098 /* CoreGraphics.framework */; };
@@ -17,7 +21,35 @@
 		50B1D72D15D9921600C20098 /* organizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72C15D9921600C20098 /* organizerViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5043680215D995DB00596DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = TapkuLibrary;
+		};
+		5043680415D995DB00596DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B45DDF1134C736600D24C1A;
+			remoteInfo = LogicTests;
+		};
+		5043680915D9962400596DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = TapkuLibrary;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = ../../library/tapku/src/TapkuLibrary.xcodeproj; sourceTree = "<group>"; };
+		5043680715D995F100596DEC /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = ../library/tapku/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
+		5043680B15D9963300596DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5043680E15D9964200596DEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50B1D71215D9921500C20098 /* G-Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B1D71615D9921600C20098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B1D71815D9921600C20098 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5043680F15D9964200596DEC /* MapKit.framework in Frameworks */,
+				5043680D15D9963800596DEC /* libTapkuLibrary.a in Frameworks */,
+				5043680C15D9963300596DEC /* QuartzCore.framework in Frameworks */,
 				50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */,
 				50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */,
 				50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */,
@@ -47,9 +82,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		504367FB15D995DB00596DEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5043680315D995DB00596DEC /* libTapkuLibrary.a */,
+				5043680515D995DB00596DEC /* LogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		50B1D70715D9921500C20098 = {
 			isa = PBXGroup;
 			children = (
+				5043680E15D9964200596DEC /* MapKit.framework */,
+				5043680B15D9963300596DEC /* QuartzCore.framework */,
+				5043680715D995F100596DEC /* TapkuLibrary.bundle */,
 				50B1D71C15D9921600C20098 /* G-Organizer */,
 				50B1D71515D9921500C20098 /* Frameworks */,
 				50B1D71315D9921500C20098 /* Products */,
@@ -77,6 +124,7 @@
 		50B1D71C15D9921600C20098 /* G-Organizer */ = {
 			isa = PBXGroup;
 			children = (
+				504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */,
 				50B1D72515D9921600C20098 /* organizerAppDelegate.h */,
 				50B1D72615D9921600C20098 /* organizerAppDelegate.m */,
 				50B1D72815D9921600C20098 /* MainStoryboard.storyboard */,
@@ -112,6 +160,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5043680A15D9962400596DEC /* PBXTargetDependency */,
 			);
 			name = "G-Organizer";
 			productName = "G-Organizer";
@@ -138,12 +187,35 @@
 			mainGroup = 50B1D70715D9921500C20098;
 			productRefGroup = 50B1D71315D9921500C20098 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 504367FB15D995DB00596DEC /* Products */;
+					ProjectRef = 504367FA15D995DB00596DEC /* TapkuLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50B1D71115D9921500C20098 /* G-Organizer */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5043680315D995DB00596DEC /* libTapkuLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTapkuLibrary.a;
+			remoteRef = 5043680215D995DB00596DEC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5043680515D995DB00596DEC /* LogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LogicTests.octest;
+			remoteRef = 5043680415D995DB00596DEC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		50B1D71015D9921500C20098 /* Resources */ = {
@@ -152,6 +224,7 @@
 			files = (
 				50B1D72115D9921600C20098 /* InfoPlist.strings in Resources */,
 				50B1D72A15D9921600C20098 /* MainStoryboard.storyboard in Resources */,
+				5043680815D995F100596DEC /* TapkuLibrary.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +242,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5043680A15D9962400596DEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TapkuLibrary;
+			targetProxy = 5043680915D9962400596DEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50B1D71F15D9921600C20098 /* InfoPlist.strings */ = {
@@ -244,7 +325,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "G-Organizer/G-Organizer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/library/tapku/src\"";
 				INFOPLIST_FILE = "G-Organizer/G-Organizer-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -255,7 +341,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "G-Organizer/G-Organizer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/library/tapku/src\"";
 				INFOPLIST_FILE = "G-Organizer/G-Organizer-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -280,6 +371,7 @@
 				50B1D73215D9921600C20098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
