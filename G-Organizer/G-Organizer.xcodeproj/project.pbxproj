@@ -10,8 +10,10 @@
 		5043680815D995F100596DEC /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5043680715D995F100596DEC /* TapkuLibrary.bundle */; };
 		5043680C15D9963300596DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680B15D9963300596DEC /* QuartzCore.framework */; };
 		5043680F15D9964200596DEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680E15D9964200596DEC /* MapKit.framework */; };
-		5043681315D9998200596DEC /* organizerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043681215D9998200596DEC /* organizerHomeViewController.m */; };
 		5043684215D9A3CE00596DEC /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043683F15D9A1AA00596DEC /* libTapkuLibrary.a */; };
+		5043684515DAB75800596DEC /* organizerLoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684415DAB75800596DEC /* organizerLoginPageViewController.m */; };
+		5043684815DAB92800596DEC /* organizerHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684715DAB92800596DEC /* organizerHomePageViewController.m */; };
+		5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684A15DABA7100596DEC /* organizerCalendarViewController.m */; };
 		50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71615D9921600C20098 /* UIKit.framework */; };
 		50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71815D9921600C20098 /* Foundation.framework */; };
 		50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71A15D9921600C20098 /* CoreGraphics.framework */; };
@@ -42,9 +44,13 @@
 		5043680715D995F100596DEC /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = ../../library/tapku/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
 		5043680B15D9963300596DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5043680E15D9964200596DEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		5043681115D9998200596DEC /* organizerHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerHomeViewController.h; path = Controllers/organizerHomeViewController.h; sourceTree = "<group>"; };
-		5043681215D9998200596DEC /* organizerHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerHomeViewController.m; path = Controllers/organizerHomeViewController.m; sourceTree = "<group>"; };
 		5043682B15D99E5200596DEC /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = ../library/tapku/src/TapkuLibrary.xcodeproj; sourceTree = "<group>"; };
+		5043684315DAB75800596DEC /* organizerLoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerLoginPageViewController.h; path = Controllers/organizerLoginPageViewController.h; sourceTree = "<group>"; };
+		5043684415DAB75800596DEC /* organizerLoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerLoginPageViewController.m; path = Controllers/organizerLoginPageViewController.m; sourceTree = "<group>"; };
+		5043684615DAB92800596DEC /* organizerHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerHomePageViewController.h; path = Controllers/organizerHomePageViewController.h; sourceTree = "<group>"; };
+		5043684715DAB92800596DEC /* organizerHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerHomePageViewController.m; path = Controllers/organizerHomePageViewController.m; sourceTree = "<group>"; };
+		5043684915DABA7100596DEC /* organizerCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerCalendarViewController.h; path = Controllers/organizerCalendarViewController.h; sourceTree = "<group>"; };
+		5043684A15DABA7100596DEC /* organizerCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerCalendarViewController.m; path = Controllers/organizerCalendarViewController.m; sourceTree = "<group>"; };
 		50B1D71215D9921500C20098 /* G-Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B1D71615D9921600C20098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B1D71815D9921600C20098 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,8 +84,12 @@
 		5043681015D9992E00596DEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5043681115D9998200596DEC /* organizerHomeViewController.h */,
-				5043681215D9998200596DEC /* organizerHomeViewController.m */,
+				5043684315DAB75800596DEC /* organizerLoginPageViewController.h */,
+				5043684415DAB75800596DEC /* organizerLoginPageViewController.m */,
+				5043684615DAB92800596DEC /* organizerHomePageViewController.h */,
+				5043684715DAB92800596DEC /* organizerHomePageViewController.m */,
+				5043684915DABA7100596DEC /* organizerCalendarViewController.h */,
+				5043684A15DABA7100596DEC /* organizerCalendarViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -237,7 +247,9 @@
 			files = (
 				50B1D72315D9921600C20098 /* main.m in Sources */,
 				50B1D72715D9921600C20098 /* organizerAppDelegate.m in Sources */,
-				5043681315D9998200596DEC /* organizerHomeViewController.m in Sources */,
+				5043684515DAB75800596DEC /* organizerLoginPageViewController.m in Sources */,
+				5043684815DAB92800596DEC /* organizerHomePageViewController.m in Sources */,
+				5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

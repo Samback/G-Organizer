@@ -1,47 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zCh-fM-Yob">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fgF-Wl-sbY">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
-        <!--Organizer Home View Controller - Calendar-->
-        <scene sceneID="qCO-wG-isD">
+        <!--Organizer Login Page View Controller-->
+        <scene sceneID="xN0-qU-hGD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipm-sa-xQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="B3d-iN-w5E" customClass="organizerHomeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bLB-OF-0EB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgi-5D-r2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="fgF-Wl-sbY" customClass="organizerLoginPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F3E-Zw-tBV">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ee0-fJ-0Xu">
+                                <rect key="frame" x="64" y="260" width="205" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Go!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zCh-fM-Yob" kind="modal" modalTransitionStyle="flipHorizontal" id="Fva-KW-Gvt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="star.png" id="W6M-Nn-WZ9"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="227" y="-631"/>
+            <point key="canvasLocation" x="-600" y="-64"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MyD-dv-CB6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnL-Bp-0Js" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="zCh-fM-Yob" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="aeX-x6-DeD"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SK8-le-T4b">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="B3d-iN-w5E" kind="relationship" relationship="viewControllers" id="Zek-mS-5cg"/>
+                        <segue destination="Iyz-cU-N3F" kind="relationship" relationship="viewControllers" id="vVf-QN-pbT"/>
+                        <segue destination="URW-cx-Xci" kind="relationship" relationship="viewControllers" id="0Bq-wR-Dhj"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-284" y="-65"/>
+            <point key="canvasLocation" x="-33" y="-2"/>
+        </scene>
+        <!--Organizer Home Page View Controller - Home-->
+        <scene sceneID="CRT-kk-bY1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooX-xT-dz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Iyz-cU-N3F" customClass="organizerHomePageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CgW-5j-Xi3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="stopwatch.png" id="Y3a-9c-Opd"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="485" y="-316"/>
+        </scene>
+        <!--Organizer Calendar View Controller - Item-->
+        <scene sceneID="YEV-e1-4Dl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ch-9s-6rD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="URW-cx-Xci" customClass="organizerCalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZb-f7-acG">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="jnE-HK-A29"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="477" y="265"/>
         </scene>
     </scenes>
     <resources>
-        <image name="star.png" width="200" height="200"/>
+        <image name="stopwatch.png" width="200" height="200"/>
     </resources>
+    <classes>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
+        </class>
+        <class className="organizerCalendarViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerCalendarViewController.h"/>
+        </class>
+        <class className="organizerHomePageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerHomePageViewController.h"/>
+        </class>
+        <class className="organizerLoginPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerLoginPageViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
