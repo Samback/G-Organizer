@@ -1,3 +1,6 @@
 [submodule "library/tapku"]
 	path = library/tapku
 	url = https://github.com/devinross/tapkulibrary.git
+[submodule "library/AGImagePicker"]
+	path = library/AGImagePicker
+	url = https://github.com/arturgrigor/AGImagePickerController.git
