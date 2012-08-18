@@ -14,6 +14,10 @@
 		5043684515DAB75800596DEC /* organizerLoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684415DAB75800596DEC /* organizerLoginPageViewController.m */; };
 		5043684815DAB92800596DEC /* organizerHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684715DAB92800596DEC /* organizerHomePageViewController.m */; };
 		5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684A15DABA7100596DEC /* organizerCalendarViewController.m */; };
+		50AABE2715DC3DAD00FC9F72 /* organizerRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */; };
+		50AABE2B15DC41AD00FC9F72 /* organizerSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2A15DC41AD00FC9F72 /* organizerSimpleCell.m */; };
+		50AABE2E15DC427800FC9F72 /* organizerPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2D15DC427800FC9F72 /* organizerPasswordCell.m */; };
+		50AABE3115DC439400FC9F72 /* organizerAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE3015DC439400FC9F72 /* organizerAvatarCell.m */; };
 		50B1D71715D9921600C20098 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71615D9921600C20098 /* UIKit.framework */; };
 		50B1D71915D9921600C20098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71815D9921600C20098 /* Foundation.framework */; };
 		50B1D71B15D9921600C20098 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1D71A15D9921600C20098 /* CoreGraphics.framework */; };
@@ -21,6 +25,7 @@
 		50B1D72315D9921600C20098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72215D9921600C20098 /* main.m */; };
 		50B1D72715D9921600C20098 /* organizerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D72615D9921600C20098 /* organizerAppDelegate.m */; };
 		50B1D72A15D9921600C20098 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B1D72815D9921600C20098 /* MainStoryboard.storyboard */; };
+		50D2423115DFE4DA00593C91 /* NSString+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D2423015DFE4DA00593C91 /* NSString+Empty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,15 @@
 		5043684715DAB92800596DEC /* organizerHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerHomePageViewController.m; path = Controllers/organizerHomePageViewController.m; sourceTree = "<group>"; };
 		5043684915DABA7100596DEC /* organizerCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerCalendarViewController.h; path = Controllers/organizerCalendarViewController.h; sourceTree = "<group>"; };
 		5043684A15DABA7100596DEC /* organizerCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerCalendarViewController.m; path = Controllers/organizerCalendarViewController.m; sourceTree = "<group>"; };
+		50AABE2515DC3DAD00FC9F72 /* organizerRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerRegisterViewController.h; path = Controllers/organizerRegisterViewController.h; sourceTree = "<group>"; };
+		50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerRegisterViewController.m; path = Controllers/organizerRegisterViewController.m; sourceTree = "<group>"; };
+		50AABE2915DC41AD00FC9F72 /* organizerSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerSimpleCell.h; path = Views/organizerSimpleCell.h; sourceTree = "<group>"; };
+		50AABE2A15DC41AD00FC9F72 /* organizerSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerSimpleCell.m; path = Views/organizerSimpleCell.m; sourceTree = "<group>"; };
+		50AABE2C15DC427800FC9F72 /* organizerPasswordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerPasswordCell.h; path = Views/organizerPasswordCell.h; sourceTree = "<group>"; };
+		50AABE2D15DC427800FC9F72 /* organizerPasswordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerPasswordCell.m; path = Views/organizerPasswordCell.m; sourceTree = "<group>"; };
+		50AABE2F15DC439400FC9F72 /* organizerAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerAvatarCell.h; path = Views/organizerAvatarCell.h; sourceTree = "<group>"; };
+		50AABE3015DC439400FC9F72 /* organizerAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerAvatarCell.m; path = Views/organizerAvatarCell.m; sourceTree = "<group>"; };
+		50AABE3415DD6BDA00FC9F72 /* organizerDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerDefinitions.h; path = Helpers/organizerDefinitions.h; sourceTree = "<group>"; };
 		50B1D71215D9921500C20098 /* G-Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B1D71615D9921600C20098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50B1D71815D9921600C20098 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +76,8 @@
 		50B1D72515D9921600C20098 /* organizerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = organizerAppDelegate.h; sourceTree = "<group>"; };
 		50B1D72615D9921600C20098 /* organizerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = organizerAppDelegate.m; sourceTree = "<group>"; };
 		50B1D72915D9921600C20098 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		50D2422F15DFE4DA00593C91 /* NSString+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Empty.h"; path = "Helpers/NSString+Empty.h"; sourceTree = "<group>"; };
+		50D2423015DFE4DA00593C91 /* NSString+Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Empty.m"; path = "Helpers/NSString+Empty.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +106,8 @@
 				5043684715DAB92800596DEC /* organizerHomePageViewController.m */,
 				5043684915DABA7100596DEC /* organizerCalendarViewController.h */,
 				5043684A15DABA7100596DEC /* organizerCalendarViewController.m */,
+				50AABE2515DC3DAD00FC9F72 /* organizerRegisterViewController.h */,
+				50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +119,29 @@
 				5043684115D9A1AA00596DEC /* LogicTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		50AABE2815DC415500FC9F72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50AABE2915DC41AD00FC9F72 /* organizerSimpleCell.h */,
+				50AABE2A15DC41AD00FC9F72 /* organizerSimpleCell.m */,
+				50AABE2C15DC427800FC9F72 /* organizerPasswordCell.h */,
+				50AABE2D15DC427800FC9F72 /* organizerPasswordCell.m */,
+				50AABE2F15DC439400FC9F72 /* organizerAvatarCell.h */,
+				50AABE3015DC439400FC9F72 /* organizerAvatarCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		50AABE3215DD6B5A00FC9F72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				50AABE3415DD6BDA00FC9F72 /* organizerDefinitions.h */,
+				50D2422F15DFE4DA00593C91 /* NSString+Empty.h */,
+				50D2423015DFE4DA00593C91 /* NSString+Empty.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		50B1D70715D9921500C20098 = {
@@ -136,6 +177,8 @@
 		50B1D71C15D9921600C20098 /* G-Organizer */ = {
 			isa = PBXGroup;
 			children = (
+				50AABE3215DD6B5A00FC9F72 /* Helpers */,
+				50AABE2815DC415500FC9F72 /* Views */,
 				5043681015D9992E00596DEC /* Controllers */,
 				50B1D72515D9921600C20098 /* organizerAppDelegate.h */,
 				50B1D72615D9921600C20098 /* organizerAppDelegate.m */,
@@ -148,13 +191,37 @@
 		50B1D71D15D9921600C20098 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5043680715D995F100596DEC /* TapkuLibrary.bundle */,
+				50D2423215DFEBE100593C91 /* Librarys */,
 				50B1D71E15D9921600C20098 /* G-Organizer-Info.plist */,
 				50B1D71F15D9921600C20098 /* InfoPlist.strings */,
 				50B1D72215D9921600C20098 /* main.m */,
 				50B1D72415D9921600C20098 /* G-Organizer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50D2423215DFEBE100593C91 /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+				50D2423415DFEC1800593C91 /* AGImagePicker */,
+				50D2423315DFEC0300593C91 /* Tapku */,
+			);
+			name = Librarys;
+			sourceTree = "<group>";
+		};
+		50D2423315DFEC0300593C91 /* Tapku */ = {
+			isa = PBXGroup;
+			children = (
+				5043680715D995F100596DEC /* TapkuLibrary.bundle */,
+			);
+			name = Tapku;
+			sourceTree = "<group>";
+		};
+		50D2423415DFEC1800593C91 /* AGImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AGImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +317,11 @@
 				5043684515DAB75800596DEC /* organizerLoginPageViewController.m in Sources */,
 				5043684815DAB92800596DEC /* organizerHomePageViewController.m in Sources */,
 				5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */,
+				50AABE2715DC3DAD00FC9F72 /* organizerRegisterViewController.m in Sources */,
+				50AABE2B15DC41AD00FC9F72 /* organizerSimpleCell.m in Sources */,
+				50AABE2E15DC427800FC9F72 /* organizerPasswordCell.m in Sources */,
+				50AABE3115DC439400FC9F72 /* organizerAvatarCell.m in Sources */,
+				50D2423115DFE4DA00593C91 /* NSString+Empty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
