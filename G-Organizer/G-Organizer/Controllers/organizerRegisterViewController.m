@@ -15,7 +15,7 @@
 #import "AGImagePickerController.h"
 
 
-@interface organizerRegisterViewController ()<UIActionSheetDelegate>
+@interface organizerRegisterViewController ()<UIActionSheetDelegate, AGImagePickerControllerDelegate>
 @property (nonatomic, strong) UITextField * loginField;
 @property (nonatomic, strong) UITextField * passwordField;
 @property (nonatomic, strong) UITextField * passwordConfirmationField;
@@ -24,7 +24,7 @@
 @property (nonatomic, strong) NSArray * resigneFields;
 @property (nonatomic, strong) UITapGestureRecognizer * keyboardRemover;
 @property (nonatomic, strong) UIActionSheet * avatarSheet;
-@property (nonatomic, strong) UIImage * avatarImage;
+@property (nonatomic, strong) UIImageView * avatarImage;
 -(BOOL) testRegistration;
 -(void)showAlbum;
 @end
@@ -181,6 +181,7 @@ const NSInteger AGE_ROW              = 1;
             }
             cell.avatarImage.layer.cornerRadius = 65;
             cell.avatarImage.layer.masksToBounds = YES;
+            _avatarImage = cell.avatarImage;
             [cell.takePhotoButton addTarget:self action:@selector(makeAvatar:) forControlEvents:UIControlEventTouchUpInside];
             return cell;
         }
@@ -363,8 +364,21 @@ const NSInteger AGE_ROW              = 1;
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     }];
-    
+    imagePickerController.delegate = self;
     [self presentModalViewController:imagePickerController animated:YES];
+}
+
+#pragma mark AGImagePickerDelegate methods
+- (void)agImagePickerController:(AGImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
+{
+    ALAsset * photo = [info objectAtIndex:0];
+    UIImage * avatar = [UIImage imageWithCGImage:photo.defaultRepresentation.fullScreenImage];
+    self.avatarImage.image = avatar;    
+    [self.tableView reloadData];
+}
+- (void)agImagePickerController:(AGImagePickerController *)picker didFail:(NSError *)error
+{
+    
 }
 
 @end
