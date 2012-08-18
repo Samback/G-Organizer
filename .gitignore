@@ -13,3 +13,7 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+.DS_Store
+G-Organizer/.DS_Store
+G-Organizer/G-Organizer/.DS_Store
+library/.DS_Store
