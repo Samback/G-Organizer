@@ -12,6 +12,8 @@
 #import "organizerPasswordCell.h"
 #import "organizerAvatarCell.h"
 #import "NSString+Empty.h"
+#import "AGImagePickerController.h"
+
 
 @interface organizerRegisterViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong) UITextField * loginField;
@@ -24,6 +26,7 @@
 @property (nonatomic, strong) UIActionSheet * avatarSheet;
 @property (nonatomic, strong) UIImage * avatarImage;
 -(BOOL) testRegistration;
+-(void)showAlbum;
 @end
 
 
@@ -327,6 +330,41 @@ const NSInteger AGE_ROW              = 1;
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSLog(@"Button index %d", buttonIndex);
+    if (buttonIndex == 1) {
+        [self showAlbum];
+    }
+}
+
+-(void)showAlbum
+{
+    AGImagePickerController *imagePickerController = [[AGImagePickerController alloc] initWithFailureBlock:^(NSError *error) {
+        
+        if (error == nil)
+        {
+            NSLog(@"User has cancelled.");
+            [self dismissModalViewControllerAnimated:YES];
+        } else
+        {
+            NSLog(@"Error: %@", error);
+            
+            // Wait for the view controller to show first and hide it after that
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self dismissModalViewControllerAnimated:YES];
+            });
+        }
+        
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        
+    } andSuccessBlock:^(NSArray *info) {
+        NSLog(@"Info: %@", info);
+        [self dismissModalViewControllerAnimated:YES];
+        
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }];
+    
+    [self presentModalViewController:imagePickerController animated:YES];
 }
 
 @end
