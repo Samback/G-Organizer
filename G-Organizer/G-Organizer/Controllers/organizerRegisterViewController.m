@@ -13,6 +13,7 @@
 #import "organizerAvatarCell.h"
 #import "NSString+Empty.h"
 #import "AGImagePickerController.h"
+#import "UIImage+ResizeImage.h"
 
 
 @interface organizerRegisterViewController ()<UIActionSheetDelegate, AGImagePickerControllerDelegate>
@@ -179,9 +180,11 @@ const NSInteger AGE_ROW              = 1;
             if (cell == nil) {
                 cell = [[organizerAvatarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.avatarImage.layer.cornerRadius = 65;
-            cell.avatarImage.layer.masksToBounds = YES;
             _avatarImage = cell.avatarImage;
+            NSLog(@"View %@ Width = %f, radius %f",NSStringFromCGRect(self.avatarImage.frame), self.avatarImage.frame.size.width, self.avatarImage.frame.size.width/2.0);
+            cell.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width/2.0;
+            cell.avatarImage.layer.masksToBounds = YES;
+            
             [cell.takePhotoButton addTarget:self action:@selector(makeAvatar:) forControlEvents:UIControlEventTouchUpInside];
             return cell;
         }
@@ -372,8 +375,8 @@ const NSInteger AGE_ROW              = 1;
 - (void)agImagePickerController:(AGImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
     ALAsset * photo = [info objectAtIndex:0];
-    UIImage * avatar = [UIImage imageWithCGImage:photo.defaultRepresentation.fullScreenImage];
-    self.avatarImage.image = avatar;    
+    UIImage * avatar = [UIImage imageWithCGImage:photo.defaultRepresentation.fullResolutionImage];
+    self.avatarImage.image = [avatar needsSize:self.avatarImage.frame.size];
     [self.tableView reloadData];
 }
 - (void)agImagePickerController:(AGImagePickerController *)picker didFail:(NSError *)error
