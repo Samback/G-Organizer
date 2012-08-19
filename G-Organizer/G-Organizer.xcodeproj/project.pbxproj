@@ -30,6 +30,8 @@
 		5092318D15E0291200C2B6EA /* AGIPCToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092317C15E0291200C2B6EA /* AGIPCToolbarItem.m */; };
 		5092318E15E0291200C2B6EA /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092317E15E0291200C2B6EA /* ALAsset+AGIPC.m */; };
 		5092318F15E0291200C2B6EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5092317F15E0291200C2B6EA /* LICENSE */; };
+		5092319215E0E71900C2B6EA /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092319115E0E71900C2B6EA /* UIImage+Crop.m */; };
+		5092319615E0E94A00C2B6EA /* UIImage+ResizeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092319515E0E94A00C2B6EA /* UIImage+ResizeImage.m */; };
 		50AABE2715DC3DAD00FC9F72 /* organizerRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */; };
 		50AABE2B15DC41AD00FC9F72 /* organizerSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2A15DC41AD00FC9F72 /* organizerSimpleCell.m */; };
 		50AABE2E15DC427800FC9F72 /* organizerPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2D15DC427800FC9F72 /* organizerPasswordCell.m */; };
@@ -97,6 +99,10 @@
 		5092317D15E0291200C2B6EA /* ALAsset+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ALAsset+AGIPC.h"; path = "../../library/AGImagePicker/AGImagePickerController/ALAsset+AGIPC.h"; sourceTree = "<group>"; };
 		5092317E15E0291200C2B6EA /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ALAsset+AGIPC.m"; path = "../../library/AGImagePicker/AGImagePickerController/ALAsset+AGIPC.m"; sourceTree = "<group>"; };
 		5092317F15E0291200C2B6EA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../library/AGImagePicker/AGImagePickerController/LICENSE; sourceTree = "<group>"; };
+		5092319015E0E71900C2B6EA /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Crop.h"; path = "Helpers/UIImage+Crop.h"; sourceTree = "<group>"; };
+		5092319115E0E71900C2B6EA /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Crop.m"; path = "Helpers/UIImage+Crop.m"; sourceTree = "<group>"; };
+		5092319415E0E94A00C2B6EA /* UIImage+ResizeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ResizeImage.h"; path = "Helpers/UIImage+ResizeImage.h"; sourceTree = "<group>"; };
+		5092319515E0E94A00C2B6EA /* UIImage+ResizeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ResizeImage.m"; path = "Helpers/UIImage+ResizeImage.m"; sourceTree = "<group>"; };
 		50AABE2515DC3DAD00FC9F72 /* organizerRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerRegisterViewController.h; path = Controllers/organizerRegisterViewController.h; sourceTree = "<group>"; };
 		50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerRegisterViewController.m; path = Controllers/organizerRegisterViewController.m; sourceTree = "<group>"; };
 		50AABE2915DC41AD00FC9F72 /* organizerSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerSimpleCell.h; path = Views/organizerSimpleCell.h; sourceTree = "<group>"; };
@@ -214,6 +220,10 @@
 				50AABE3415DD6BDA00FC9F72 /* organizerDefinitions.h */,
 				50D2422F15DFE4DA00593C91 /* NSString+Empty.h */,
 				50D2423015DFE4DA00593C91 /* NSString+Empty.m */,
+				5092319015E0E71900C2B6EA /* UIImage+Crop.h */,
+				5092319115E0E71900C2B6EA /* UIImage+Crop.m */,
+				5092319415E0E94A00C2B6EA /* UIImage+ResizeImage.h */,
+				5092319515E0E94A00C2B6EA /* UIImage+ResizeImage.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -406,6 +416,8 @@
 				5092318C15E0291200C2B6EA /* AGIPCGridItem.m in Sources */,
 				5092318D15E0291200C2B6EA /* AGIPCToolbarItem.m in Sources */,
 				5092318E15E0291200C2B6EA /* ALAsset+AGIPC.m in Sources */,
+				5092319215E0E71900C2B6EA /* UIImage+Crop.m in Sources */,
+				5092319615E0E94A00C2B6EA /* UIImage+ResizeImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
