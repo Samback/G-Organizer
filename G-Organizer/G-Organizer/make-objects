@@ -1,0 +1,2 @@
+#!/bin/bash
+mogenerator --model myDays.xcdatamodeld/myDays.xcdatamodel --machine-dir CoreDataMachine --human-dir CoreDataHuman --template-var arc=true
