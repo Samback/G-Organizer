@@ -7,6 +7,7 @@
 //
 
 #import "organizerRegisterViewController.h"
+#import "organizerAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 #import "organizerSimpleCell.h"
 #import "organizerPasswordCell.h"
@@ -14,6 +15,7 @@
 #import "NSString+Empty.h"
 #import "AGImagePickerController.h"
 #import "UIImage+ResizeImage.h"
+#import "User.h"
 
 
 @interface organizerRegisterViewController ()<UIActionSheetDelegate, AGImagePickerControllerDelegate>
@@ -297,7 +299,30 @@ const NSInteger AGE_ROW              = 1;
         for (NSString * field in _resigneFields) {
             NSLog(@"FIELD %@", field);
         }
+        organizerAppDelegate *appDelegate =
+        [[UIApplication sharedApplication] delegate];
+        
+        NSManagedObjectContext *context =
+        [appDelegate managedObjectContext];
+         User *newContact;
+        newContact = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"User"
+                      inManagedObjectContext:context];
+        newContact.login = _loginField.text;
+        newContact.password = _passwordField.text;
+        newContact.photo = UIImageJPEGRepresentation(_avatarImage.image, 1.0);
+        
+        NSError *error;
+        [context save:&error];
+        if (error) {
+            NSLog(@"Problems with saving");
+        }else
+        {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:@"YRA" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
     }
+    
    
     
 }
