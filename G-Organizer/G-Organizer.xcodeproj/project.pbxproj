@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5009FEE315E5583E0025BF7A /* myDays.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5009FEE115E5583E0025BF7A /* myDays.xcdatamodeld */; };
+		5009FF3115E569770025BF7A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009FF3015E569770025BF7A /* CoreData.framework */; };
 		5043680815D995F100596DEC /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5043680715D995F100596DEC /* TapkuLibrary.bundle */; };
 		5043680C15D9963300596DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680B15D9963300596DEC /* QuartzCore.framework */; };
 		5043680F15D9964200596DEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5043680E15D9964200596DEC /* MapKit.framework */; };
@@ -14,6 +16,8 @@
 		5043684515DAB75800596DEC /* organizerLoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684415DAB75800596DEC /* organizerLoginPageViewController.m */; };
 		5043684815DAB92800596DEC /* organizerHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684715DAB92800596DEC /* organizerHomePageViewController.m */; };
 		5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684A15DABA7100596DEC /* organizerCalendarViewController.m */; };
+		50601A0B15EEA235004BE045 /* _User.m in Sources */ = {isa = PBXBuildFile; fileRef = 50601A0A15EEA235004BE045 /* _User.m */; };
+		50601A0E15EEA240004BE045 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 50601A0D15EEA240004BE045 /* User.m */; };
 		5092318015E0291200C2B6EA /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316915E0291200C2B6EA /* AGImagePickerController.m */; };
 		5092318115E0291200C2B6EA /* AGImagePickerController+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316B15E0291200C2B6EA /* AGImagePickerController+Constants.m */; };
 		5092318215E0291200C2B6EA /* AGIPC-Checkmark-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5092316C15E0291200C2B6EA /* AGIPC-Checkmark-iPad.png */; };
@@ -65,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5009FEE215E5583E0025BF7A /* myDays.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myDays.xcdatamodel; sourceTree = "<group>"; };
+		5009FF3015E569770025BF7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5043680715D995F100596DEC /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TapkuLibrary.bundle; path = ../../library/tapku/src/TapkuLibrary.bundle; sourceTree = "<group>"; };
 		5043680B15D9963300596DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5043680E15D9964200596DEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -75,6 +81,10 @@
 		5043684715DAB92800596DEC /* organizerHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerHomePageViewController.m; path = Controllers/organizerHomePageViewController.m; sourceTree = "<group>"; };
 		5043684915DABA7100596DEC /* organizerCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerCalendarViewController.h; path = Controllers/organizerCalendarViewController.h; sourceTree = "<group>"; };
 		5043684A15DABA7100596DEC /* organizerCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerCalendarViewController.m; path = Controllers/organizerCalendarViewController.m; sourceTree = "<group>"; };
+		50601A0915EEA235004BE045 /* _User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _User.h; path = CoreDataMachine/_User.h; sourceTree = "<group>"; };
+		50601A0A15EEA235004BE045 /* _User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _User.m; path = CoreDataMachine/_User.m; sourceTree = "<group>"; };
+		50601A0C15EEA240004BE045 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = CoreDataHuman/User.h; sourceTree = "<group>"; };
+		50601A0D15EEA240004BE045 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = CoreDataHuman/User.m; sourceTree = "<group>"; };
 		5092316815E0291200C2B6EA /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGImagePickerController.h; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.h; sourceTree = "<group>"; };
 		5092316915E0291200C2B6EA /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGImagePickerController.m; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.m; sourceTree = "<group>"; };
 		5092316A15E0291200C2B6EA /* AGImagePickerController+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AGImagePickerController+Constants.h"; path = "../../library/AGImagePicker/AGImagePickerController/AGImagePickerController+Constants.h"; sourceTree = "<group>"; };
@@ -133,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5009FF3115E569770025BF7A /* CoreData.framework in Frameworks */,
 				50D2425815DFF1CB00593C91 /* AssetsLibrary.framework in Frameworks */,
 				5043684215D9A3CE00596DEC /* libTapkuLibrary.a in Frameworks */,
 				5043680F15D9964200596DEC /* MapKit.framework in Frameworks */,
@@ -168,6 +179,33 @@
 				5043684115D9A1AA00596DEC /* LogicTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		50601A0615EEA213004BE045 /* Core Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				50601A0815EEA223004BE045 /* Machine */,
+				50601A0715EEA21D004BE045 /* Human */,
+			);
+			name = "Core Data Files";
+			sourceTree = "<group>";
+		};
+		50601A0715EEA21D004BE045 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				50601A0C15EEA240004BE045 /* User.h */,
+				50601A0D15EEA240004BE045 /* User.m */,
+			);
+			name = Human;
+			sourceTree = "<group>";
+		};
+		50601A0815EEA223004BE045 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				50601A0915EEA235004BE045 /* _User.h */,
+				50601A0A15EEA235004BE045 /* _User.m */,
+			);
+			name = Machine;
 			sourceTree = "<group>";
 		};
 		5092316715E028E000C2B6EA /* AGImagePicker */ = {
@@ -231,6 +269,7 @@
 		50B1D70715D9921500C20098 = {
 			isa = PBXGroup;
 			children = (
+				5009FF3015E569770025BF7A /* CoreData.framework */,
 				50D2425715DFF1CB00593C91 /* AssetsLibrary.framework */,
 				5043680E15D9964200596DEC /* MapKit.framework */,
 				5043680B15D9963300596DEC /* QuartzCore.framework */,
@@ -262,6 +301,7 @@
 		50B1D71C15D9921600C20098 /* G-Organizer */ = {
 			isa = PBXGroup;
 			children = (
+				50601A0615EEA213004BE045 /* Core Data Files */,
 				50AABE3215DD6B5A00FC9F72 /* Helpers */,
 				50AABE2815DC415500FC9F72 /* Views */,
 				5043681015D9992E00596DEC /* Controllers */,
@@ -276,6 +316,7 @@
 		50B1D71D15D9921600C20098 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5009FEE115E5583E0025BF7A /* myDays.xcdatamodeld */,
 				50D2423215DFEBE100593C91 /* Librarys */,
 				50B1D71E15D9921600C20098 /* G-Organizer-Info.plist */,
 				50B1D71F15D9921600C20098 /* InfoPlist.strings */,
@@ -418,6 +459,9 @@
 				5092318E15E0291200C2B6EA /* ALAsset+AGIPC.m in Sources */,
 				5092319215E0E71900C2B6EA /* UIImage+Crop.m in Sources */,
 				5092319615E0E94A00C2B6EA /* UIImage+ResizeImage.m in Sources */,
+				5009FEE315E5583E0025BF7A /* myDays.xcdatamodeld in Sources */,
+				50601A0B15EEA235004BE045 /* _User.m in Sources */,
+				50601A0E15EEA240004BE045 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +596,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5009FEE115E5583E0025BF7A /* myDays.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5009FEE215E5583E0025BF7A /* myDays.xcdatamodel */,
+			);
+			currentVersion = 5009FEE215E5583E0025BF7A /* myDays.xcdatamodel */;
+			path = myDays.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50B1D70915D9921500C20098 /* Project object */;
 }
