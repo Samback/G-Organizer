@@ -7,9 +7,11 @@
 //
 
 #import "organizerLoginPageViewController.h"
+#import "User.h"
+
 
 @interface organizerLoginPageViewController ()
-
+-(void) checkLoginedUsers;
 @end
 
 @implementation organizerLoginPageViewController
@@ -26,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
@@ -38,6 +40,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) checkLoginedUsers
+{
+    NSManagedObjectContext * context = [ DELEGATE managedObjectContext];    
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];    
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];    
+    //NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(age BETWEEN {10, 50})"];/* OR (firstName LIKE[c] 'Max')"];*/    
+    [request setEntity:entityDescription];    
+    // [request setPredicate:predicate];   
+    NSError * error;    
+    User * user = [[context executeFetchRequest:request error:&error] objectAtIndex:1];    
+    if (user == nil)
+        NSLog(@"The error with Core Data");    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:user.login delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+
 }
 
 @end
