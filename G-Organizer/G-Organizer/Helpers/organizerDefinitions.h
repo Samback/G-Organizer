@@ -5,6 +5,7 @@
 //  Created by Max on 16.08.12.
 //  Copyright (c) 2012 Max Tymchii. All rights reserved.
 //
+#import "organizerAppDelegate.h"
 
 #define APP_NAME @"G-Organizer"
 #define REQUIERD_HEADER_TITLE @"Required fields"
@@ -18,3 +19,6 @@
 #define PASSWORD_AND_CONFIRMATION @"Password is not equal to confirm field."
 #define PASSWORD_EMPTY @"Password and confirm field could not be empty."
 #define AVATAR_EMPTY @"Please add your avatar."
+
+
+#define DELEGATE ((organizerAppDelegate *)[[UIApplication sharedApplication] delegate])
