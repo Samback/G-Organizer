@@ -19,6 +19,7 @@
 #define PASSWORD_AND_CONFIRMATION @"Password is not equal to confirm field."
 #define PASSWORD_EMPTY @"Password and confirm field could not be empty."
 #define AVATAR_EMPTY @"Please add your avatar."
+#define MISTAKEN_CONFIRMATION @"Sorry, login or password not correct, please try againe"
 
 
 #define DELEGATE ((organizerAppDelegate *)[[UIApplication sharedApplication] delegate])

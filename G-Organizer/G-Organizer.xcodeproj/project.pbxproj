@@ -18,6 +18,7 @@
 		5043684B15DABA7100596DEC /* organizerCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5043684A15DABA7100596DEC /* organizerCalendarViewController.m */; };
 		50601A0B15EEA235004BE045 /* _User.m in Sources */ = {isa = PBXBuildFile; fileRef = 50601A0A15EEA235004BE045 /* _User.m */; };
 		50601A0E15EEA240004BE045 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 50601A0D15EEA240004BE045 /* User.m */; };
+		50601A1B15F15307004BE045 /* FirstScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 50601A1A15F15307004BE045 /* FirstScreen.png */; };
 		5092318015E0291200C2B6EA /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316915E0291200C2B6EA /* AGImagePickerController.m */; };
 		5092318115E0291200C2B6EA /* AGImagePickerController+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316B15E0291200C2B6EA /* AGImagePickerController+Constants.m */; };
 		5092318215E0291200C2B6EA /* AGIPC-Checkmark-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5092316C15E0291200C2B6EA /* AGIPC-Checkmark-iPad.png */; };
@@ -85,6 +86,7 @@
 		50601A0A15EEA235004BE045 /* _User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _User.m; path = CoreDataMachine/_User.m; sourceTree = "<group>"; };
 		50601A0C15EEA240004BE045 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = CoreDataHuman/User.h; sourceTree = "<group>"; };
 		50601A0D15EEA240004BE045 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = CoreDataHuman/User.m; sourceTree = "<group>"; };
+		50601A1A15F15307004BE045 /* FirstScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FirstScreen.png; path = Images/FirstScreen.png; sourceTree = "<group>"; };
 		5092316815E0291200C2B6EA /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGImagePickerController.h; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.h; sourceTree = "<group>"; };
 		5092316915E0291200C2B6EA /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGImagePickerController.m; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.m; sourceTree = "<group>"; };
 		5092316A15E0291200C2B6EA /* AGImagePickerController+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AGImagePickerController+Constants.h"; path = "../../library/AGImagePicker/AGImagePickerController/AGImagePickerController+Constants.h"; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 			name = Machine;
 			sourceTree = "<group>";
 		};
+		50601A1915F152A7004BE045 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				50601A1A15F15307004BE045 /* FirstScreen.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		5092316715E028E000C2B6EA /* AGImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +326,7 @@
 		50B1D71D15D9921600C20098 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50601A1915F152A7004BE045 /* Images */,
 				5009FEE115E5583E0025BF7A /* myDays.xcdatamodeld */,
 				50D2423215DFEBE100593C91 /* Librarys */,
 				50B1D71E15D9921600C20098 /* G-Organizer-Info.plist */,
@@ -429,6 +440,7 @@
 				5092318815E0291200C2B6EA /* AGIPCAssetsController_iPad.xib in Resources */,
 				5092318915E0291200C2B6EA /* AGIPCAssetsController_iPhone.xib in Resources */,
 				5092318F15E0291200C2B6EA /* LICENSE in Resources */,
+				50601A1B15F15307004BE045 /* FirstScreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

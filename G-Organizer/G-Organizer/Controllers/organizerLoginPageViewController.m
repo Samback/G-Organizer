@@ -9,12 +9,20 @@
 #import "organizerLoginPageViewController.h"
 #import "User.h"
 
+@interface organizerLoginPageViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *loginField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (nonatomic, strong) UITapGestureRecognizer * keyboardRemover;
 
-@interface organizerLoginPageViewController ()
--(void) checkLoginedUsers;
+-(void) userConfirmation;
+-(void) onShowKeyboard:(id)sender;
+-(void) hideKeyboard:(id)sender;
 @end
 
 @implementation organizerLoginPageViewController
+@synthesize loginField    = _loginField;
+@synthesize passwordField = _passwordField;
+@synthesize keyboardRemover = _keyboardRemover;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +36,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.passwordField.secureTextEntry = YES;
+    self.passwordField.delegate = self;
+    
+    self.keyboardRemover = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];    
+    [_loginField addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
+    [_passwordField addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];   
+   
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
 {
+    [self setLoginField:nil];
+    [self setPasswordField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -41,22 +59,49 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+- (IBAction)inToAplication:(UIButton *)sender {
+    [self userConfirmation];
+}
 
--(void) checkLoginedUsers
+-(void) userConfirmation
 {
     NSManagedObjectContext * context = [ DELEGATE managedObjectContext];    
     NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];    
-    NSFetchRequest * request = [[NSFetchRequest alloc] init];    
-    //NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(age BETWEEN {10, 50})"];/* OR (firstName LIKE[c] 'Max')"];*/    
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(%K == %@) and (%K == %@)",@"login", _loginField.text, @"password", _passwordField.text];
     [request setEntity:entityDescription];    
-    // [request setPredicate:predicate];   
-    NSError * error;    
-    User * user = [[context executeFetchRequest:request error:&error] objectAtIndex:1];    
-    if (user == nil)
-        NSLog(@"The error with Core Data");    
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:user.login delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
-
+                               [request setPredicate:predicate];
+    NSError * error;
+    NSArray * answers = [context executeFetchRequest:request error:&error];
+    if  ([answers count] == 1)
+    {
+        DELEGATE.currentUser = [answers objectAtIndex:0];
+        UITabBarController * inController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        [self presentModalViewController:inController animated:YES];
+        
+    }
+    else
+    {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:MISTAKEN_CONFIRMATION delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+     [alert show];
+    }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_passwordField resignFirstResponder];
+    [self userConfirmation];
+    return NO;
+}
+-(void) onShowKeyboard:(id)sender
+{
+    [self.view addGestureRecognizer:_keyboardRemover];
+}
+
+-(void)hideKeyboard:(id)sender
+{
+    [_loginField resignFirstResponder];
+    [_passwordField resignFirstResponder];
+    [self.view removeGestureRecognizer:_keyboardRemover];
+}
 @end

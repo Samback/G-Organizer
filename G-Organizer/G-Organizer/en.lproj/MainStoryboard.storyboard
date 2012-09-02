@@ -14,23 +14,12 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ee0-fJ-0Xu">
-                                <rect key="frame" x="64" y="347" width="205" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FirstScreen.png" id="Pj6-fN-zM3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Go!">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zCh-fM-Yob" kind="modal" modalTransitionStyle="flipHorizontal" id="Fva-KW-Gvt"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SoP-6q-RgU">
-                                <rect key="frame" x="64" y="400" width="205" height="37"/>
+                                <rect key="frame" x="194" y="360" width="71" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
@@ -44,13 +33,46 @@
                                     <segue destination="dCP-IE-ocW" kind="modal" modalTransitionStyle="flipHorizontal" id="eua-sF-BDj"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" id="SCc-eQ-cfY">
+                                <rect key="frame" x="0.0" y="185" width="97" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="tki-gI-Pvh">
+                                <rect key="frame" x="220" y="214" width="89" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KNf-d8-3lD">
+                                <rect key="frame" x="54" y="369" width="43" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="inToAplication:" destination="fgF-Wl-sbY" eventType="touchUpInside" id="jIK-11-mGO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zOC-YC-ooo"/>
+                    <connections>
+                        <outlet property="loginField" destination="SCc-eQ-cfY" id="o7K-d8-i0s"/>
+                        <outlet property="passwordField" destination="tki-gI-Pvh" id="Ksr-7K-ACO"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1126" y="322"/>
+            <point key="canvasLocation" x="-2814" y="370"/>
         </scene>
         <!--Organizer Register View Controller-->
         <scene sceneID="cBK-fr-Smz">
@@ -196,13 +218,13 @@
                     <navigationItem key="navigationItem" id="hBM-0k-jRL"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-459" y="481"/>
+            <point key="canvasLocation" x="-2299" y="1161"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MyD-dv-CB6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnL-Bp-0Js" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController definesPresentationContext="YES" id="zCh-fM-Yob" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" definesPresentationContext="YES" id="zCh-fM-Yob" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aeX-x6-DeD"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SK8-le-T4b">
@@ -211,14 +233,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Iyz-cU-N3F" kind="relationship" relationship="viewControllers" id="vVf-QN-pbT"/>
-                        <segue destination="URW-cx-Xci" kind="relationship" relationship="viewControllers" id="0Bq-wR-Dhj"/>
+                        <segue destination="URW-cx-Xci" kind="relationship" relationship="viewControllers" id="xhe-Fr-h1K"/>
+                        <segue destination="Iyz-cU-N3F" kind="relationship" relationship="viewControllers" id="EWt-ay-UAt"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-33" y="-2"/>
+            <point key="canvasLocation" x="-2281" y="390"/>
         </scene>
-        <!--Organizer Home Page View Controller - Home-->
+        <!--Organizer Home Page View Controller - Item-->
         <scene sceneID="CRT-kk-bY1">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooX-xT-dz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,10 +250,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="stopwatch.png" id="Y3a-9c-Opd"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="n56-FR-Xng"/>
+                    <navigationItem key="navigationItem" id="lDZ-B4-RjG"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="485" y="-316"/>
+            <point key="canvasLocation" x="-1241" y="102"/>
         </scene>
         <!--Organizer Calendar View Controller - Item-->
         <scene sceneID="YEV-e1-4Dl">
@@ -243,15 +266,59 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jnE-HK-A29"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZBV-Rx-jen"/>
+                    <navigationItem key="navigationItem" id="uTq-jA-8fP"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="477" y="265"/>
+            <point key="canvasLocation" x="-1241" y="803"/>
         </scene>
     </scenes>
     <resources>
-        <image name="stopwatch.png" width="200" height="200"/>
+        <image name="FirstScreen.png" width="640" height="960"/>
     </resources>
+    <classes>
+        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
+        </class>
+        <class className="organizerAvatarCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerAvatarCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="takePhotoButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="organizerCalendarViewController" superclassName="TKCalendarMonthViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerCalendarViewController.h"/>
+        </class>
+        <class className="organizerHomePageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerHomePageViewController.h"/>
+        </class>
+        <class className="organizerLoginPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerLoginPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="inToAplication:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="organizerPasswordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerPasswordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="organizerRegisterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerRegisterViewController.h"/>
+        </class>
+        <class className="organizerSimpleCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerSimpleCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="inputName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

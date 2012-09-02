@@ -7,11 +7,18 @@
 //
 
 #import "organizerAppDelegate.h"
+#import "User.h"
+
+@interface organizerAppDelegate()
+
+@end
 
 @implementation organizerAppDelegate
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize currentUser = _currentUser;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
