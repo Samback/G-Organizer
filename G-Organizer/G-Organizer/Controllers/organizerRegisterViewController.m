@@ -12,6 +12,7 @@
 #import "organizerSimpleCell.h"
 #import "organizerPasswordCell.h"
 #import "organizerAvatarCell.h"
+#import "organizerDefinitions.h"
 #import "NSString+Empty.h"
 #import "AGImagePickerController.h"
 #import "UIImage+ResizeImage.h"

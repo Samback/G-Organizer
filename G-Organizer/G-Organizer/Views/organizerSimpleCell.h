@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface organizerSimpleCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *inputName;
 

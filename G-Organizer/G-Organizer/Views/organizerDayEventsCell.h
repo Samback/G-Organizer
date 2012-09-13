@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class organizerDayEvents;
+
 @interface organizerDayEventsCell : UITableViewCell
+
+@property (strong, nonatomic) organizerDayEvents * eventData;
 
 @end

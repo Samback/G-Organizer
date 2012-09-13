@@ -10,4 +10,7 @@
 
 @implementation organizerDayEvents
 
+@synthesize eventState = _eventState;
+@synthesize eventTitle = _eventTitle;
+
 @end

@@ -7,36 +7,72 @@
 //
 
 #import "organizerDayEventsViewController.h"
+#import "organizerDayEventsCell.h"
+#import "organizerDayEvents.h"
 
-@interface organizerDayEventsViewController ()
+@interface organizerDayEventsViewController ()<UITextViewDelegate>
+@property (strong, nonatomic) IBOutlet UITextView *myNews;
 
+@property (nonatomic, strong) NSArray * events;
+
+- (NSArray *)cellsData;
 @end
+NSInteger  numberOfSections = 1;
+
+NSInteger  criticalDaysStartedRow = 0;
+NSString * criticalDaysStarted = @"Critical Days Start";
+NSInteger  criticalDaysEndRow  = 1;
+NSString * criticalDaysEnded = @"Critical Days End";
+NSInteger  sexRow = 2;
+NSString * sexHappen = @"Have sex ;)";
+NSInteger  badFillingsRow = 3;
+NSString * badFillings = @"Poor health";
 
 @implementation organizerDayEventsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize myNews = _myNews;
+@synthesize events = _events;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.myNews.layer setCornerRadius:10];
+    self.myNews.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.myNews.layer.borderWidth = 3.0;
+    self.events = [self cellsData];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (NSArray *)cellsData
+{
+    NSMutableArray * ev = [NSMutableArray array];
+    
+    organizerDayEvents * event = [[organizerDayEvents alloc] init];
+    event.eventTitle = criticalDaysStarted;
+    [ev addObject:event];
+    
+    event = [[organizerDayEvents alloc] init];
+    event.eventTitle = criticalDaysEnded;
+    [ev addObject:event];
+    
+    event = [[organizerDayEvents alloc] init];
+    event.eventTitle = sexHappen;
+    [ev addObject:event];
+    
+    event = [[organizerDayEvents alloc] init];
+    event.eventTitle = badFillings;
+    [ev addObject:event];
+    
+    return (NSArray *)ev;
 }
 
 - (void)viewDidUnload
 {
+    [self setMyNews:nil];
     [super viewDidUnload];
+   
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -50,78 +86,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return numberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.events.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
+    static NSString *CellIdentifier = @"Day Events Cell";    
+    organizerDayEventsCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell.eventData =  [_events objectAtIndex:indexPath.row];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (IBAction)backClicked:(UIButton *)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
+#pragma mark - UITextView Delegate Methods
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{   
+    if([text isEqualToString:@"\n"]) {
+        [_myNews resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
 @end

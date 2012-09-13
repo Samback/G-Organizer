@@ -7,22 +7,36 @@
 //
 
 #import "organizerDayEventsCell.h"
+#import "organizerDayEvents.h"
+
+@interface organizerDayEventsCell()
+
+@property (strong, nonatomic) IBOutlet UISwitch *eventState;
+@property (strong, nonatomic) IBOutlet UILabel *eventName;
+
+@end
 
 @implementation organizerDayEventsCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+@synthesize eventState;
+@synthesize eventName;
+@synthesize eventData = _eventData;
+
+- (IBAction)stateChanged:(UISwitch *)sender
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.eventData.eventState = sender.on;
+}
+
+- (void)setEventData:(organizerDayEvents *)eventData
+{
+    _eventData = eventData;
+    self.eventName.text = eventData.eventTitle;
+    self.eventState.on = eventData.eventState;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
