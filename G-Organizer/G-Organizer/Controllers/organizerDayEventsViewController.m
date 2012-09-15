@@ -14,28 +14,28 @@
 
 @interface organizerDayEventsViewController ()<UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextView *myNews;
-@property (nonatomic, strong) NSArray * events;
-@property (nonatomic, strong) DayData * dayData;
+@property (nonatomic, strong) NSArray *events;
+@property (nonatomic, strong) DayData *dayData;
 
 - (NSArray *)fillCellsWithData;
 @end
 NSInteger  numberOfSections = 1;
 
 NSInteger  criticalDaysStartedRow = 0;
-NSString * criticalDaysStarted = @"Critical Days Start";
+NSString  *criticalDaysStarted = @"Critical Days Start";
 NSInteger  criticalDaysEndRow  = 1;
-NSString * criticalDaysEnded = @"Critical Days End";
+NSString  *criticalDaysEnded = @"Critical Days End";
 NSInteger  sexRow = 2;
-NSString * sexHappen = @"Have sex ;)";
+NSString  *sexHappen = @"Have sex ;)";
 NSInteger  badFillingsRow = 3;
-NSString * badFillings = @"Poor health";
+NSString  *badFillings = @"Poor health";
 
 @implementation organizerDayEventsViewController
 
 @synthesize myNews = _myNews;
 @synthesize events = _events;
 
-- (void)setDayData:(DayData *)dayData;
+- (void)setDayData:(DayData *)dayData
 {
     _dayData = dayData;
 }
@@ -45,7 +45,6 @@ NSString * badFillings = @"Poor health";
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    NSLog(@"DataDate %@", self.dayData);
     [self.myNews.layer setCornerRadius:10];
     self.myNews.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.myNews.layer.borderWidth = 3.0;
@@ -61,8 +60,7 @@ NSString * badFillings = @"Poor health";
                               sexHappen, badFillings,
                               nil];
     DayEvent * dayEvent = nil;
-    for (int i = 0; i < labelsTitles.count; i++)
-    {
+    for (int i = 0; i < labelsTitles.count; i++){
         dayEvent = [DayEvent dayEventWithTitle:[labelsTitles objectAtIndex:i] position:[NSNumber numberWithInt:i] andDayData:_dayData];
         
         organizerDayEvents * event = [[organizerDayEvents alloc] init];
@@ -79,9 +77,6 @@ NSString * badFillings = @"Poor health";
 {
     [self setMyNews:nil];
     [super viewDidUnload];
-   
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -93,7 +88,6 @@ NSString * badFillings = @"Poor health";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return numberOfSections;
 }
 
@@ -111,9 +105,9 @@ NSString * badFillings = @"Poor health";
     return cell;
 }
 - (IBAction)saveInfo:(UIButton *)sender {
-     DayEvent * dayEvent = nil;
+     DayEvent *dayEvent = nil;
     for (int i = 0; i < _events.count; i++) {
-        organizerDayEvents * currentEvent = [_events objectAtIndex:i];
+        organizerDayEvents *currentEvent = [_events objectAtIndex:i];
         dayEvent = [DayEvent dayEventWithTitle:currentEvent.eventTitle position:[NSNumber numberWithInt:i] andDayData:_dayData];
         dayEvent.eventStateValue = currentEvent.eventState;
     }
@@ -145,8 +139,7 @@ NSString * badFillings = @"Poor health";
     if([text isEqualToString:@"\n"]) {
         [_myNews resignFirstResponder];
         return NO;
-    }
-    
+    }    
     return YES;
 }
 @end

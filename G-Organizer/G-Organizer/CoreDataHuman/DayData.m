@@ -4,7 +4,7 @@
 @implementation DayData
 + (DayData *)dayDataWithDate:(NSDate *)currentdate andUser:(User *)user
 {
-    DayData *dayDat = nil;
+    DayData *dayData = nil;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSManagedObjectContext * context = user.managedObjectContext;
     
@@ -12,14 +12,14 @@
     request.predicate = [NSPredicate predicateWithFormat:@"(%K == %@) and (%K == %@)", @"day", currentdate, @"dayOwner", user];
     
     NSError *error = nil;
-    dayDat = [[context executeFetchRequest:request error:&error] lastObject];
-    if (!error && !dayDat) {
-        dayDat = [NSEntityDescription insertNewObjectForEntityForName:@"DayData" inManagedObjectContext:context];
-        dayDat.day = currentdate;
-        dayDat.userNews = @"";
-        dayDat.dayOwner = user;
+    dayData = [[context executeFetchRequest:request error:&error] lastObject];
+    if (!error && !dayData) {
+        dayData = [NSEntityDescription insertNewObjectForEntityForName:@"DayData" inManagedObjectContext:context];
+        dayData.day = currentdate;
+        dayData.userNews = @"";
+        dayData.dayOwner = user;
     }
-    return dayDat;    
+    return dayData;
 }
 
 @end

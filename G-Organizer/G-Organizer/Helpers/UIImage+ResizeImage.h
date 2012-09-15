@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (ResizeImage)
--(UIImage *)needsSize:(CGSize)newSize;
+- (UIImage *)needsSize:(CGSize)newSize;
 @end

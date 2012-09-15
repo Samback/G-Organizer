@@ -10,7 +10,7 @@
 
 @interface organizerDayEvents : NSObject
 
-@property (nonatomic, strong) NSString * eventTitle;
+@property (nonatomic, strong) NSString *eventTitle;
 @property (nonatomic) BOOL eventState;
 
 @end

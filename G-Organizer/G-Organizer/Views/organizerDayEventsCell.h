@@ -12,6 +12,6 @@
 
 @interface organizerDayEventsCell : UITableViewCell
 
-@property (strong, nonatomic) organizerDayEvents * eventData;
+@property (strong, nonatomic) organizerDayEvents *eventData;
 
 @end

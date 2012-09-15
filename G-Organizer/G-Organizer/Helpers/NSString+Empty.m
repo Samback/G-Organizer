@@ -9,8 +9,8 @@
 #import "NSString+Empty.h"
 
 @implementation NSString (Empty)
--(BOOL) isStringEmpty
+- (BOOL)isStringEmpty
 {
-    return ([self isEqualToString:@""]|| self == nil) ? YES : NO;
+    return ([self isEqualToString:@""] || self == nil) ? YES : NO;
 }
 @end

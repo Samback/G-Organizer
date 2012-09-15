@@ -4,9 +4,9 @@
 @implementation DayEvent
 + (DayEvent *)dayEventWithTitle:(NSString *) title position:(NSNumber *) aPosition andDayData:(DayData *) dayData{
     
-    DayEvent * dayEvent = nil;
-    NSManagedObjectContext * context = dayData.managedObjectContext;
-    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    DayEvent *dayEvent = nil;
+    NSManagedObjectContext *context = dayData.managedObjectContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:@"DayEvent" inManagedObjectContext:context];
     request.predicate = [NSPredicate predicateWithFormat:@"(currentDay == %@) and (eventNumber == %@)", dayData, aPosition];
     

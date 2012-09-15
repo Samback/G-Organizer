@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface organizerAvatarCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
 

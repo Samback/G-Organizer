@@ -18,8 +18,8 @@
 #import "UIImage+ResizeImage.h"
 #import "User.h"
 
-
 @interface organizerRegisterViewController ()<UIActionSheetDelegate, AGImagePickerControllerDelegate>
+
 @property (nonatomic, strong) UITextField * loginField;
 @property (nonatomic, strong) UITextField * passwordField;
 @property (nonatomic, strong) UITextField * passwordConfirmationField;
@@ -31,11 +31,10 @@
 @property (nonatomic, strong) UIImageView * avatarImage;
 
 - (void)makeResponsibleToShowKeyboard;
--(BOOL) testRegistration;
--(void)showAlbum;
+- (BOOL)testRegistration;
+- (void)showAlbum;
+
 @end
-
-
 
 const NSInteger NUMBER_OF_SECTIONS = 2;
 //Required fields
@@ -45,17 +44,15 @@ const NSInteger LOGIN_ROW            = 0;
 const NSInteger PASSWORD_ROW         = 1;
 const NSInteger PASSWORD_CONFIRM_ROW = 2;
 const NSInteger AVATAR_ROW           = 3;
-
 //Optional fields
 const NSInteger OPTIONAL_SECTION     = 1;
 const NSInteger NUMBER_OF_ROWS_IN_OPTIONAL_SECTION = 2;
 const NSInteger FULL_NAME_ROW        = 0;
 const NSInteger AGE_ROW              = 1;
 
-
 @implementation organizerRegisterViewController
-@synthesize resigneFields = _resigneFields;
 
+@synthesize resigneFields = _resigneFields;
 @synthesize loginField = _loginField;
 @synthesize passwordField = _passwordField;
 @synthesize passwordConfirmationField = _passwordConfirmationField;
@@ -68,11 +65,10 @@ const NSInteger AGE_ROW              = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.keyboardRemover = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
     self.resigneFields = [NSMutableArray array];
-    UIActionSheet * action = [[UIActionSheet alloc] initWithTitle:APP_NAME delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:TAKE_PHOTO_FROM_CAMERA, TAKE_PHOTO_FROM_ALBUM, nil];
-    self.avatarSheet = action;    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:APP_NAME delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:TAKE_PHOTO_FROM_CAMERA, TAKE_PHOTO_FROM_ALBUM, nil];
+    self.avatarSheet = action;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -88,18 +84,16 @@ const NSInteger AGE_ROW              = 1;
                           _passwordConfirmationField,
                           _fullNameField, _ageField,
                           nil];
-    for(UITextField * field in _resigneFields)
+    for(UITextField *field in _resigneFields)
     {
         [field addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
     }
-
+    
 }
 - (void)viewDidUnload
 {
     [self setResigneFields:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -111,7 +105,6 @@ const NSInteger AGE_ROW              = 1;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return NUMBER_OF_SECTIONS;
 }
 
@@ -121,16 +114,17 @@ const NSInteger AGE_ROW              = 1;
         return NUMBER_OF_ROWS_IN_REQUIRED_SECTION;
     }else if (section == OPTIONAL_SECTION)
         return NUMBER_OF_ROWS_IN_OPTIONAL_SECTION;
-    // Return the number of rows in the section.
+    
     return 0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{    
+{
     if (section == REQUIRED_SECTION) {
         return REQUIERD_HEADER_TITLE;
     }else if (section == OPTIONAL_SECTION)
         return OPTIONAL_HEADER_TITLE;
+    
     return @"";
 }
 
@@ -141,6 +135,7 @@ const NSInteger AGE_ROW              = 1;
             return AVATAR_CELL_HEIGHT;
         }
     }
+    
     return STANDART_CELL_HEIGHT;
 }
 
@@ -156,7 +151,7 @@ const NSInteger AGE_ROW              = 1;
             return cell;
         }
         else if ((indexPath.row == PASSWORD_ROW) || (indexPath.row == PASSWORD_CONFIRM_ROW)){
-            static NSString *CellIdentifier = @"Password Cell";            
+            static NSString *CellIdentifier = @"Password Cell";
             organizerPasswordCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
             if (indexPath.row == PASSWORD_ROW) {
@@ -173,10 +168,10 @@ const NSInteger AGE_ROW              = 1;
             return cell;
         }
         else if (indexPath.row == AVATAR_ROW){
-            static NSString *CellIdentifier = @"Avatar Cell";            
+            static NSString *CellIdentifier = @"Avatar Cell";
             organizerAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
-            _avatarImage = cell.avatarImage;            
+            _avatarImage = cell.avatarImage;
             NSLog(@"View %@ Width = %f, radius %f",NSStringFromCGRect(self.avatarImage.frame), self.avatarImage.frame.size.width, self.avatarImage.frame.size.width/2.0);
             cell.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width/2.0;
             cell.avatarImage.layer.masksToBounds = YES;
@@ -185,17 +180,16 @@ const NSInteger AGE_ROW              = 1;
             return cell;
         }
     }
-    else if (indexPath.section == OPTIONAL_SECTION)
-    {
+    else if (indexPath.section == OPTIONAL_SECTION){
         if (indexPath.row == FULL_NAME_ROW) {
-            static NSString *CellIdentifier = @"Simple Cell";            
+            static NSString *CellIdentifier = @"Simple Cell";
             organizerSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             cell.nameLabel.text = @"Full Name:";
             _fullNameField = cell.inputName;
             return cell;
-        }else if (indexPath.row == AGE_ROW)
-        {
-            static NSString *CellIdentifier = @"Simple Cell";            
+        }
+        else if (indexPath.row == AGE_ROW){
+            static NSString *CellIdentifier = @"Simple Cell";
             organizerSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             
             cell.nameLabel.text = @"Age:";
@@ -203,7 +197,7 @@ const NSInteger AGE_ROW              = 1;
             cell.inputName.keyboardType = UIKeyboardTypeDecimalPad;
             return cell;
         }
-    }    
+    }
 }
 
 
@@ -213,8 +207,9 @@ const NSInteger AGE_ROW              = 1;
 {
     [self.tableView addGestureRecognizer:_keyboardRemover];
 }
+
 - (void)hideKeyboard:(UITapGestureRecognizer *)sender {
-    for (UITextField * field in self.resigneFields) {
+    for (UITextField *field in self.resigneFields) {
         [field resignFirstResponder];
     }
     [self.tableView removeGestureRecognizer:_keyboardRemover];
@@ -252,7 +247,7 @@ const NSInteger AGE_ROW              = 1;
     else if (_avatarImage == nil)
         errorMessage = AVATAR_EMPTY;
     if (errorMessage) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return NO;
     }
@@ -262,8 +257,7 @@ const NSInteger AGE_ROW              = 1;
     [self dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma Take Photo
+#pragma mark - Take Photo
 - (void)makeAvatar:(UIButton *)sender {
     NSLog(@"Make Avatar");
     [_avatarSheet showInView:self.view];
@@ -272,7 +266,6 @@ const NSInteger AGE_ROW              = 1;
 #pragma mark - UIActionSheetDelegate method's
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Button index %d", buttonIndex);
     if (buttonIndex == 1) {
         [self showAlbum];
     }
@@ -282,14 +275,12 @@ const NSInteger AGE_ROW              = 1;
 {
     AGImagePickerController *imagePickerController = [[AGImagePickerController alloc] initWithFailureBlock:^(NSError *error) {
         
-        if (error == nil)
-        {
+        if (error == nil){
             NSLog(@"User has cancelled.");
             [self dismissModalViewControllerAnimated:YES];
-        } else
-        {
-            NSLog(@"Error: %@", error);
-            
+        }
+        else{
+            NSLog(@"Error: %@", error);            
             // Wait for the view controller to show first and hide it after that
             double delayInSeconds = 0.5;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -302,8 +293,7 @@ const NSInteger AGE_ROW              = 1;
         
     } andSuccessBlock:^(NSArray *info) {
         NSLog(@"Info: %@", info);
-        [self dismissModalViewControllerAnimated:YES];
-        
+        [self dismissModalViewControllerAnimated:YES];        
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     }];
     imagePickerController.delegate = self;
@@ -313,8 +303,8 @@ const NSInteger AGE_ROW              = 1;
 #pragma mark AGImagePickerDelegate methods
 - (void)agImagePickerController:(AGImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
-    ALAsset * photo = [info objectAtIndex:0];
-    UIImage * avatar = [UIImage imageWithCGImage:photo.defaultRepresentation.fullResolutionImage];
+    ALAsset *photo = [info objectAtIndex:0];
+    UIImage *avatar = [UIImage imageWithCGImage:photo.defaultRepresentation.fullResolutionImage];
     self.avatarImage.image = [avatar needsSize:self.avatarImage.frame.size];
     [self.tableView reloadData];
 }
