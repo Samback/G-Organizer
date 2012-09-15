@@ -7,31 +7,37 @@
 //
 
 #import "organizerCalendarViewController.h"
+#import "organizerDayEventsViewController.h"
+#import "organizerDefinitions.h"
+#import "DayData.h"
 
 @interface organizerCalendarViewController ()
-
+@property (nonatomic, strong) DayData *selectedDay;
 @end
 
 @implementation organizerCalendarViewController
-
+@synthesize selectedDay = _selectedDay;
 
 - (void) viewDidLoad{
 	[super viewDidLoad];
-	[self.monthView selectDate:[NSDate month]];
+	[self.monthView selectDate:[NSDate date]];
     
 }
 - (void) viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
-    
-    
-    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //[dateFormatter setDateFormat:@"dd.MM.yy"];
-    //NSDate *d = [dateFormatter dateFromString:@"02.05.11"];
-    //[dateFormatter release];
-    //[self.monthView selectDate:d];
-    
-    
-    
+}
+- (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date
+{
+    NSLog(@"Select %@", date);
+    self.selectedDay = [DayData dayDataWithDate:date andMangedObject:DELEGATE.managedObjectContext];
+    [self performSegueWithIdentifier:@"Day Events" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+   
+    organizerDayEventsViewController *selectedDayController = [segue destinationViewController];
+    [selectedDayController setDayData:_selectedDay];    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

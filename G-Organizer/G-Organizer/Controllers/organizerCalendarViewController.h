@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <TapkuLibrary/TapkuLibrary.h>
 
-@interface organizerCalendarViewController : TKCalendarMonthViewController
+@interface organizerCalendarViewController : TKCalendarMonthTableViewController
 
 @end
