@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DayData" representedClassName="DayData" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userNews" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dayOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="dayData" inverseEntity="User" syncable="YES"/>
+        <relationship name="someEvent" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayEvent" inverseName="currentDay" inverseEntity="DayEvent" syncable="YES"/>
+    </entity>
+    <entity name="DayEvent" representedClassName="DayEvent" syncable="YES">
+        <attribute name="eventName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventState" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="currentDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayData" inverseName="someEvent" inverseEntity="DayData" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dayData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayData" inverseName="dayOwner" inverseEntity="DayData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="DayData" positionX="169" positionY="45" width="128" height="105"/>
+        <element name="DayEvent" positionX="349" positionY="18" width="128" height="105"/>
+        <element name="User" positionX="0" positionY="0" width="128" height="135"/>
     </elements>
 </model>

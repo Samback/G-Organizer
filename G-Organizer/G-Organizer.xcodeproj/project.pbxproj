@@ -21,6 +21,8 @@
 		50601A1B15F15307004BE045 /* FirstScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 50601A1A15F15307004BE045 /* FirstScreen.png */; };
 		5064FF7E16026447005C7C09 /* organizerDayEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064FF7D16026447005C7C09 /* organizerDayEvents.m */; };
 		5064FF821602795B005C7C09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5064FF811602795B005C7C09 /* background.png */; };
+		5064FF8516028AEA005C7C09 /* _DayEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064FF8416028AEA005C7C09 /* _DayEvent.m */; };
+		5064FF8816028B08005C7C09 /* DayEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064FF8716028B08005C7C09 /* DayEvent.m */; };
 		5092318015E0291200C2B6EA /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316915E0291200C2B6EA /* AGImagePickerController.m */; };
 		5092318115E0291200C2B6EA /* AGImagePickerController+Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092316B15E0291200C2B6EA /* AGImagePickerController+Constants.m */; };
 		5092318215E0291200C2B6EA /* AGIPC-Checkmark-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5092316C15E0291200C2B6EA /* AGIPC-Checkmark-iPad.png */; };
@@ -39,6 +41,8 @@
 		5092318F15E0291200C2B6EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5092317F15E0291200C2B6EA /* LICENSE */; };
 		5092319215E0E71900C2B6EA /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092319115E0E71900C2B6EA /* UIImage+Crop.m */; };
 		5092319615E0E94A00C2B6EA /* UIImage+ResizeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5092319515E0E94A00C2B6EA /* UIImage+ResizeImage.m */; };
+		509CB5131604585300D5EF28 /* _DayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CB5121604585300D5EF28 /* _DayData.m */; };
+		509CB5161604586500D5EF28 /* DayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CB5151604586500D5EF28 /* DayData.m */; };
 		50AABE2715DC3DAD00FC9F72 /* organizerRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */; };
 		50AABE2B15DC41AD00FC9F72 /* organizerSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2A15DC41AD00FC9F72 /* organizerSimpleCell.m */; };
 		50AABE2E15DC427800FC9F72 /* organizerPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AABE2D15DC427800FC9F72 /* organizerPasswordCell.m */; };
@@ -94,6 +98,10 @@
 		5064FF7C16026447005C7C09 /* organizerDayEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerDayEvents.h; path = Models/organizerDayEvents.h; sourceTree = "<group>"; };
 		5064FF7D16026447005C7C09 /* organizerDayEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerDayEvents.m; path = Models/organizerDayEvents.m; sourceTree = "<group>"; };
 		5064FF811602795B005C7C09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/background.png; sourceTree = "<group>"; };
+		5064FF8316028AEA005C7C09 /* _DayEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DayEvent.h; path = CoreDataMachine/_DayEvent.h; sourceTree = "<group>"; };
+		5064FF8416028AEA005C7C09 /* _DayEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DayEvent.m; path = CoreDataMachine/_DayEvent.m; sourceTree = "<group>"; };
+		5064FF8616028B08005C7C09 /* DayEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DayEvent.h; path = CoreDataHuman/DayEvent.h; sourceTree = "<group>"; };
+		5064FF8716028B08005C7C09 /* DayEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayEvent.m; path = CoreDataHuman/DayEvent.m; sourceTree = "<group>"; };
 		5092316815E0291200C2B6EA /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGImagePickerController.h; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.h; sourceTree = "<group>"; };
 		5092316915E0291200C2B6EA /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGImagePickerController.m; path = ../../library/AGImagePicker/AGImagePickerController/AGImagePickerController.m; sourceTree = "<group>"; };
 		5092316A15E0291200C2B6EA /* AGImagePickerController+Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AGImagePickerController+Constants.h"; path = "../../library/AGImagePicker/AGImagePickerController/AGImagePickerController+Constants.h"; sourceTree = "<group>"; };
@@ -122,6 +130,10 @@
 		5092319115E0E71900C2B6EA /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Crop.m"; path = "Helpers/UIImage+Crop.m"; sourceTree = "<group>"; };
 		5092319415E0E94A00C2B6EA /* UIImage+ResizeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ResizeImage.h"; path = "Helpers/UIImage+ResizeImage.h"; sourceTree = "<group>"; };
 		5092319515E0E94A00C2B6EA /* UIImage+ResizeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ResizeImage.m"; path = "Helpers/UIImage+ResizeImage.m"; sourceTree = "<group>"; };
+		509CB5111604585300D5EF28 /* _DayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DayData.h; path = CoreDataMachine/_DayData.h; sourceTree = "<group>"; };
+		509CB5121604585300D5EF28 /* _DayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DayData.m; path = CoreDataMachine/_DayData.m; sourceTree = "<group>"; };
+		509CB5141604586500D5EF28 /* DayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DayData.h; path = CoreDataHuman/DayData.h; sourceTree = "<group>"; };
+		509CB5151604586500D5EF28 /* DayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DayData.m; path = CoreDataHuman/DayData.m; sourceTree = "<group>"; };
 		50AABE2515DC3DAD00FC9F72 /* organizerRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerRegisterViewController.h; path = Controllers/organizerRegisterViewController.h; sourceTree = "<group>"; };
 		50AABE2615DC3DAD00FC9F72 /* organizerRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = organizerRegisterViewController.m; path = Controllers/organizerRegisterViewController.m; sourceTree = "<group>"; };
 		50AABE2915DC41AD00FC9F72 /* organizerSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = organizerSimpleCell.h; path = Views/organizerSimpleCell.h; sourceTree = "<group>"; };
@@ -208,6 +220,10 @@
 		50601A0715EEA21D004BE045 /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				509CB5141604586500D5EF28 /* DayData.h */,
+				509CB5151604586500D5EF28 /* DayData.m */,
+				5064FF8616028B08005C7C09 /* DayEvent.h */,
+				5064FF8716028B08005C7C09 /* DayEvent.m */,
 				50601A0C15EEA240004BE045 /* User.h */,
 				50601A0D15EEA240004BE045 /* User.m */,
 			);
@@ -217,6 +233,10 @@
 		50601A0815EEA223004BE045 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				509CB5111604585300D5EF28 /* _DayData.h */,
+				509CB5121604585300D5EF28 /* _DayData.m */,
+				5064FF8316028AEA005C7C09 /* _DayEvent.h */,
+				5064FF8416028AEA005C7C09 /* _DayEvent.m */,
 				50601A0915EEA235004BE045 /* _User.h */,
 				50601A0A15EEA235004BE045 /* _User.m */,
 			);
@@ -504,6 +524,10 @@
 				50DC543A15F52ECC00CA1495 /* organizerDayEventsViewController.m in Sources */,
 				50D47C1215F5405700DA8A88 /* organizerDayEventsCell.m in Sources */,
 				5064FF7E16026447005C7C09 /* organizerDayEvents.m in Sources */,
+				5064FF8516028AEA005C7C09 /* _DayEvent.m in Sources */,
+				5064FF8816028B08005C7C09 /* DayEvent.m in Sources */,
+				509CB5131604585300D5EF28 /* _DayData.m in Sources */,
+				509CB5161604586500D5EF28 /* DayData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

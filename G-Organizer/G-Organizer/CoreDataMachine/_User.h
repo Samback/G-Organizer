@@ -13,11 +13,13 @@ extern const struct UserAttributes {
 } UserAttributes;
 
 extern const struct UserRelationships {
+	__unsafe_unretained NSString *dayData;
 } UserRelationships;
 
 extern const struct UserFetchedProperties {
 } UserFetchedProperties;
 
+@class DayData;
 
 
 
@@ -78,10 +80,22 @@ extern const struct UserFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSSet* dayData;
+
+- (NSMutableSet*)dayDataSet;
+
+
+
+
 
 @end
 
 @interface _User (CoreDataGeneratedAccessors)
+
+- (void)addDayData:(NSSet*)value_;
+- (void)removeDayData:(NSSet*)value_;
+- (void)addDayDataObject:(DayData*)value_;
+- (void)removeDayDataObject:(DayData*)value_;
 
 @end
 
@@ -116,6 +130,11 @@ extern const struct UserFetchedProperties {
 - (void)setPrimitivePhoto:(NSData*)value;
 
 
+
+
+
+- (NSMutableSet*)primitiveDayData;
+- (void)setPrimitiveDayData:(NSMutableSet*)value;
 
 
 @end

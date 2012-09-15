@@ -12,6 +12,7 @@ const struct UserAttributes UserAttributes = {
 };
 
 const struct UserRelationships UserRelationships = {
+	.dayData = @"dayData",
 };
 
 const struct UserFetchedProperties UserFetchedProperties = {
@@ -84,6 +85,19 @@ const struct UserFetchedProperties UserFetchedProperties = {
 
 
 
+
+@dynamic dayData;
+
+	
+- (NSMutableSet*)dayDataSet {
+	[self willAccessValueForKey:@"dayData"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"dayData"];
+  
+	[self didAccessValueForKey:@"dayData"];
+	return result;
+}
+	
 
 
 
