@@ -20,7 +20,7 @@
 
 - (void) viewDidLoad{
 	[super viewDidLoad];
-	[self.monthView selectDate:[NSDate date]];
+	//[self.monthView selectDate:[NSDate date]];
     
 }
 - (void) viewDidAppear:(BOOL)animated{
@@ -29,7 +29,7 @@
 - (void) calendarMonthView:(TKCalendarMonthView*)monthView didSelectDate:(NSDate*)date
 {
     NSLog(@"Select %@", date);
-    self.selectedDay = [DayData dayDataWithDate:date andMangedObject:DELEGATE.managedObjectContext];
+    self.selectedDay = [DayData dayDataWithDate:date andUser:DELEGATE.currentUser];
     [self performSegueWithIdentifier:@"Day Events" sender:self];
 }
 

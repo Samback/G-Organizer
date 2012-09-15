@@ -7,6 +7,7 @@
 //
 
 #import "organizerLoginPageViewController.h"
+#import "organizerDefinitions.h"
 #import "User.h"
 
 @interface organizerLoginPageViewController ()<UITextFieldDelegate>
@@ -40,10 +41,10 @@
     self.passwordField.secureTextEntry = YES;
     self.passwordField.delegate = self;
     
-    self.keyboardRemover = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];    
+    self.keyboardRemover = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
     [_loginField addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
-    [_passwordField addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];   
-   
+    [_passwordField addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -65,25 +66,22 @@
 
 -(void) userConfirmation
 {
-    NSManagedObjectContext * context = [ DELEGATE managedObjectContext];    
-    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];    
+    NSManagedObjectContext * context = DELEGATE.managedObjectContext;
+    NSEntityDescription * entityDescription = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(%K == %@) and (%K == %@)",@"login", _loginField.text, @"password", _passwordField.text];
-    [request setEntity:entityDescription];    
-                               [request setPredicate:predicate];
+    [request setEntity:entityDescription];
+    [request setPredicate:predicate];
     NSError * error;
     NSArray * answers = [context executeFetchRequest:request error:&error];
-    if  ([answers count] == 1)
-    {
-        DELEGATE.currentUser = [answers objectAtIndex:0];
+    if  (!error){
+        DELEGATE.currentUser = [answers lastObject];
         UITabBarController * inController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         [self presentModalViewController:inController animated:YES];
-        
     }
-    else
-    {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:MISTAKEN_CONFIRMATION delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-     [alert show];
+    else{
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:MISTAKEN_CONFIRMATION delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
     }
 }
 

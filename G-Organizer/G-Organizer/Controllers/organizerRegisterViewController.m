@@ -219,114 +219,42 @@ const NSInteger AGE_ROW              = 1;
         }
     }
     
-    // Configure the cell...
 }
 
--(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.tableView endEditing:YES];
-}
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 -(void) onShowKeyboard:(id)sender
 {
     [self.tableView addGestureRecognizer:_keyboardRemover];
 }
 - (void)hideKeyboard:(UITapGestureRecognizer *)sender {
-//    if (!_resigneFields) {
-//        NSArray * arr = [NSArray arrayWithObjects:_loginField, _passwordField, _passwordConfirmationField, _fullNameField, _ageField, nil];
-//        self.resigneFields = arr;
-//    }
-   
-   // NSLog (@"Array %@", arr);
-
     for (UITextField * field in self.resigneFields) {
         [field resignFirstResponder];
     }
     [self.tableView removeGestureRecognizer:_keyboardRemover];
-    
 }
+
 - (IBAction)makeRegistration:(UIButton *)sender {
     if ([self testRegistration]) {
-        for (NSString * field in _resigneFields) {
-            NSLog(@"FIELD %@", field);
-        }
-        organizerAppDelegate *appDelegate =
-        [[UIApplication sharedApplication] delegate];
-        
-        NSManagedObjectContext *context =
-        [appDelegate managedObjectContext];
-         User *newContact;
-        newContact = [NSEntityDescription
-                      insertNewObjectForEntityForName:@"User"
-                      inManagedObjectContext:context];
-        newContact.login = _loginField.text;
-        newContact.password = _passwordField.text;
+        User *newContact = [User userWithLogin:_loginField.text password:_passwordField.text andContext:DELEGATE.managedObjectContext];
         newContact.photo = UIImageJPEGRepresentation(_avatarImage.image, 1.0);
+        newContact.fullName = _fullNameField.text;
+        newContact.age = [NSDecimalNumber decimalNumberWithString:_ageField.text];
         
         NSError *error;
-        [context save:&error];
+        [DELEGATE.managedObjectContext save:&error];
         if (error) {
             NSLog(@"Problems with saving");
-        }else
-        {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APP_NAME message:@"YRA" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert show];
+            [self cancelRegistration:nil];
         }
-    }
-    
-   
-    
+        else
+        {
+           [self cancelRegistration:nil];
+        }
+    }    
 }
+
 -(BOOL) testRegistration
 {
     NSString * errorMessage = nil;
