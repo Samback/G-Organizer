@@ -29,6 +29,8 @@
 @property (nonatomic, strong) UITapGestureRecognizer * keyboardRemover;
 @property (nonatomic, strong) UIActionSheet * avatarSheet;
 @property (nonatomic, strong) UIImageView * avatarImage;
+
+- (void)makeResponsibleToShowKeyboard;
 -(BOOL) testRegistration;
 -(void)showAlbum;
 @end
@@ -63,15 +65,6 @@ const NSInteger AGE_ROW              = 1;
 @synthesize avatarSheet = _avatarSheet;
 @synthesize avatarImage = _avatarImage;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -79,10 +72,28 @@ const NSInteger AGE_ROW              = 1;
     self.keyboardRemover = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
     self.resigneFields = [NSMutableArray array];
     UIActionSheet * action = [[UIActionSheet alloc] initWithTitle:APP_NAME delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:TAKE_PHOTO_FROM_CAMERA, TAKE_PHOTO_FROM_ALBUM, nil];
-    self.avatarSheet = action;
-
+    self.avatarSheet = action;    
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self makeResponsibleToShowKeyboard];
+}
+
+- (void)makeResponsibleToShowKeyboard
+{
+    self.resigneFields = [NSArray arrayWithObjects:
+                          _loginField, _passwordField,
+                          _passwordConfirmationField,
+                          _fullNameField, _ageField,
+                          nil];
+    for(UITextField * field in _resigneFields)
+    {
+        [field addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
+    }
+
+}
 - (void)viewDidUnload
 {
     [self setResigneFields:nil];
@@ -115,21 +126,12 @@ const NSInteger AGE_ROW              = 1;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    self.resigneFields = [NSArray arrayWithObjects:
-                          _loginField, _passwordField,
-                          _passwordConfirmationField,
-                          _fullNameField, _ageField,
-                          nil];
-    for(UITextField * field in _resigneFields)
-    {
-        [field addTarget:self action:@selector(onShowKeyboard:) forControlEvents:UIControlEventEditingDidBegin];
-    }
-
+{    
     if (section == REQUIRED_SECTION) {
         return REQUIERD_HEADER_TITLE;
     }else if (section == OPTIONAL_SECTION)
         return OPTIONAL_HEADER_TITLE;
+    return @"";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -144,30 +146,24 @@ const NSInteger AGE_ROW              = 1;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     if (indexPath.section == REQUIRED_SECTION) {
+    if (indexPath.section == REQUIRED_SECTION) {
         if (indexPath.row == LOGIN_ROW) {
             static NSString *CellIdentifier = @"Simple Cell";
-            
             organizerSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[organizerSimpleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.nameLabel.text = @"Login:";
-             _loginField = cell.inputName;
-            return cell;
-        }else if ((indexPath.row == PASSWORD_ROW) || (indexPath.row == PASSWORD_CONFIRM_ROW))
-        {
-            static NSString *CellIdentifier = @"Password Cell";
             
+            cell.nameLabel.text = @"Login:";
+            _loginField = cell.inputName;
+            return cell;
+        }
+        else if ((indexPath.row == PASSWORD_ROW) || (indexPath.row == PASSWORD_CONFIRM_ROW)){
+            static NSString *CellIdentifier = @"Password Cell";            
             organizerPasswordCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[organizerPasswordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
+            
             if (indexPath.row == PASSWORD_ROW) {
                 cell.passwordLabel.text = @"Password:";
                 _passwordField = cell.passwordField;
-            }else
-            {
+            }
+            else{
                 cell.passwordLabel.text = @"Confirmation:";
                 _passwordConfirmationField = cell.passwordField;
             }
@@ -175,15 +171,12 @@ const NSInteger AGE_ROW              = 1;
             cell.passwordField.secureTextEntry = YES;
             cell.passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
             return cell;
-        }else if (indexPath.row == AVATAR_ROW)
-        {
-            static NSString *CellIdentifier = @"Avatar Cell";
-            
+        }
+        else if (indexPath.row == AVATAR_ROW){
+            static NSString *CellIdentifier = @"Avatar Cell";            
             organizerAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[organizerAvatarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            _avatarImage = cell.avatarImage;
+            
+            _avatarImage = cell.avatarImage;            
             NSLog(@"View %@ Width = %f, radius %f",NSStringFromCGRect(self.avatarImage.frame), self.avatarImage.frame.size.width, self.avatarImage.frame.size.width/2.0);
             cell.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width/2.0;
             cell.avatarImage.layer.masksToBounds = YES;
@@ -195,30 +188,22 @@ const NSInteger AGE_ROW              = 1;
     else if (indexPath.section == OPTIONAL_SECTION)
     {
         if (indexPath.row == FULL_NAME_ROW) {
-            static NSString *CellIdentifier = @"Simple Cell";
-            
+            static NSString *CellIdentifier = @"Simple Cell";            
             organizerSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[organizerSimpleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
             cell.nameLabel.text = @"Full Name:";
             _fullNameField = cell.inputName;
             return cell;
         }else if (indexPath.row == AGE_ROW)
         {
-            static NSString *CellIdentifier = @"Simple Cell";
-            
+            static NSString *CellIdentifier = @"Simple Cell";            
             organizerSimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[organizerSimpleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
+            
             cell.nameLabel.text = @"Age:";
             _ageField = cell.inputName;
-            cell.inputName.keyboardType = UIKeyboardTypeDecimalPad;                
+            cell.inputName.keyboardType = UIKeyboardTypeDecimalPad;
             return cell;
         }
-    }
-    
+    }    
 }
 
 
@@ -250,14 +235,14 @@ const NSInteger AGE_ROW              = 1;
         }
         else
         {
-           [self cancelRegistration:nil];
+            [self cancelRegistration:nil];
         }
-    }    
+    }
 }
 
 -(BOOL) testRegistration
 {
-    NSString * errorMessage = nil;
+    NSString *errorMessage = nil;
     if ([_loginField.text isStringEmpty])
         errorMessage = LOGIN_FIELD_IS_EMPTY;
     else if ([_passwordField.text isStringEmpty] || [_passwordConfirmationField.text isStringEmpty])
@@ -281,7 +266,7 @@ const NSInteger AGE_ROW              = 1;
 #pragma Take Photo
 - (void)makeAvatar:(UIButton *)sender {
     NSLog(@"Make Avatar");
-    [_avatarSheet showInView:self.view];      
+    [_avatarSheet showInView:self.view];
 }
 
 #pragma mark - UIActionSheetDelegate method's
