@@ -9,13 +9,15 @@
 #import "organizerDayEventsViewController.h"
 #import "organizerDayEventsCell.h"
 #import "organizerDayEvents.h"
+#import "DayData.h"
+#import "DayEvent.h"
 
 @interface organizerDayEventsViewController ()<UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextView *myNews;
-
 @property (nonatomic, strong) NSArray * events;
+@property (nonatomic, strong) DayData * dayData;
 
-- (NSArray *)cellsData;
+- (NSArray *)fillCellsWithData;
 @end
 NSInteger  numberOfSections = 1;
 
@@ -33,38 +35,43 @@ NSString * badFillings = @"Poor health";
 @synthesize myNews = _myNews;
 @synthesize events = _events;
 
+- (void)setDayData:(DayData *)dayData;
+{
+    _dayData = dayData;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    NSLog(@"DataDate %@", self.dayData);
     [self.myNews.layer setCornerRadius:10];
     self.myNews.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.myNews.layer.borderWidth = 3.0;
-    self.events = [self cellsData];
+    self.events = [self fillCellsWithData];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }
 
-- (NSArray *)cellsData
+- (NSArray *)fillCellsWithData
 {
     NSMutableArray * ev = [NSMutableArray array];
+    NSArray * labelsTitles = [NSArray arrayWithObjects:
+                              criticalDaysStarted, criticalDaysEnded,
+                              sexHappen, badFillings,
+                              nil];
+    DayEvent * dayEvent = nil;
+    for (int i = 0; i < labelsTitles.count; i++)
+    {
+        dayEvent = [DayEvent dayEventWithTitle:[labelsTitles objectAtIndex:i] position:[NSNumber numberWithInt:i] andDayData:_dayData];
+        
+        organizerDayEvents * event = [[organizerDayEvents alloc] init];
+        event.eventTitle = dayEvent.eventName;
+        event.eventState = dayEvent.eventStateValue;
+        [ev addObject:event];     
+    }
     
-    organizerDayEvents * event = [[organizerDayEvents alloc] init];
-    event.eventTitle = criticalDaysStarted;
-    [ev addObject:event];
-    
-    event = [[organizerDayEvents alloc] init];
-    event.eventTitle = criticalDaysEnded;
-    [ev addObject:event];
-    
-    event = [[organizerDayEvents alloc] init];
-    event.eventTitle = sexHappen;
-    [ev addObject:event];
-    
-    event = [[organizerDayEvents alloc] init];
-    event.eventTitle = badFillings;
-    [ev addObject:event];
-    
+    self.myNews.text = _dayData.userNews;
     return (NSArray *)ev;
 }
 
@@ -102,6 +109,24 @@ NSString * badFillings = @"Poor health";
     cell.eventData =  [_events objectAtIndex:indexPath.row];
     
     return cell;
+}
+- (IBAction)saveInfo:(UIButton *)sender {
+     DayEvent * dayEvent = nil;
+    for (int i = 0; i < _events.count; i++) {
+        organizerDayEvents * currentEvent = [_events objectAtIndex:i];
+        dayEvent = [DayEvent dayEventWithTitle:currentEvent.eventTitle position:[NSNumber numberWithInt:i] andDayData:_dayData];
+        dayEvent.eventStateValue = currentEvent.eventState;
+    }
+    _dayData.userNews = _myNews.text;
+    
+    NSError *error = nil;
+    [_dayData.managedObjectContext save:&error];
+    if (error) {
+        NSLog(@"Problems with saving");
+    }
+    else{
+        [self dismissModalViewControllerAnimated:YES];
+    }  
 }
 
 - (IBAction)backClicked:(UIButton *)sender {

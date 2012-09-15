@@ -317,6 +317,9 @@
                                     <state key="highlighted">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="saveInfo:" destination="Wth-hy-wHT" eventType="touchUpInside" id="aAy-b6-Z9z"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3y4-1U-YGM">
                                     <rect key="frame" x="20" y="105" width="108" height="37"/>
@@ -386,66 +389,6 @@
     <resources>
         <image name="FirstScreen.png" width="640" height="960"/>
     </resources>
-    <classes>
-        <class className="TKCalendarMonthTableViewController" superclassName="TKCalendarMonthViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthTableViewController.h"/>
-        </class>
-        <class className="TKCalendarMonthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TKCalendarMonthViewController.h"/>
-        </class>
-        <class className="organizerAvatarCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerAvatarCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="takePhotoButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="organizerCalendarViewController" superclassName="TKCalendarMonthTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerCalendarViewController.h"/>
-        </class>
-        <class className="organizerDayEventsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerDayEventsCell.h"/>
-            <relationships>
-                <relationship kind="action" name="stateChanged:" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="eventName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="eventState" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="organizerDayEventsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerDayEventsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backClicked:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myNews" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="organizerHomePageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerHomePageViewController.h"/>
-        </class>
-        <class className="organizerLoginPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerLoginPageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loginField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="organizerPasswordCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerPasswordCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="organizerRegisterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerRegisterViewController.h"/>
-        </class>
-        <class className="organizerSimpleCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/organizerSimpleCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="inputName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

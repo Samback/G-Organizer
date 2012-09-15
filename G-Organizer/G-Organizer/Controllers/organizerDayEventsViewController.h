@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+
+@class DayData;
+
 @interface organizerDayEventsViewController : UITableViewController
+- (void)setDayData:(DayData *)dayData;
 
 @end
