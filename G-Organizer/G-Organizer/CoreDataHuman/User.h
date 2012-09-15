@@ -1,5 +1,5 @@
 #import "_User.h"
 
 @interface User : _User {}
-// Custom logic goes here.
++ (User *)userWithLogin:(NSString *)login password:(NSString *)password andContext:(NSManagedObjectContext *) context;
 @end
