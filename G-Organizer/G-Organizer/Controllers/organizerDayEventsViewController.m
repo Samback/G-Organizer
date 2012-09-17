@@ -12,12 +12,20 @@
 #import "DayData.h"
 #import "DayEvent.h"
 
-@interface organizerDayEventsViewController ()<UITextViewDelegate>
+@interface organizerDayEventsViewController ()<UITextViewDelegate, organizerDayEventsCellDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextView *myNews;
-@property (nonatomic, strong) NSArray *events;
-@property (nonatomic, strong) DayData *dayData;
+@property (nonatomic, strong) NSArray  *events;
+@property (nonatomic, strong) DayData  *dayData;
+@property (nonatomic, strong) UISwitch *criticalDayStart;
+@property (nonatomic, strong) UISwitch *criticalDayEnd;
+@property (nonatomic, strong) NSArray  *labelsTitles;
+
+- (BOOL)isCriticalDayStartedRow:(NSUInteger)row;
+- (BOOL)isCriticalDayEndedRow:(NSUInteger)row;
 
 - (NSArray *)fillCellsWithData;
+
 @end
 NSInteger  numberOfSections = 1;
 
@@ -34,6 +42,9 @@ NSString  *badFillings = @"Poor health";
 
 @synthesize myNews = _myNews;
 @synthesize events = _events;
+@synthesize criticalDayEnd = _criticalDayEnd;
+@synthesize criticalDayStart = _criticalDayStart;
+@synthesize labelsTitles = _labelsTitles;
 
 - (void)setDayData:(DayData *)dayData
 {
@@ -55,13 +66,13 @@ NSString  *badFillings = @"Poor health";
 - (NSArray *)fillCellsWithData
 {
     NSMutableArray * ev = [NSMutableArray array];
-    NSArray * labelsTitles = [NSArray arrayWithObjects:
+    self.labelsTitles = [NSArray arrayWithObjects:
                               criticalDaysStarted, criticalDaysEnded,
                               sexHappen, badFillings,
                               nil];
     DayEvent * dayEvent = nil;
-    for (int i = 0; i < labelsTitles.count; i++){
-        dayEvent = [DayEvent dayEventWithTitle:[labelsTitles objectAtIndex:i] position:[NSNumber numberWithInt:i] andDayData:_dayData];
+    for (int i = 0; i < _labelsTitles.count; i++){
+        dayEvent = [DayEvent dayEventWithTitle:[_labelsTitles objectAtIndex:i] position:[NSNumber numberWithInt:i] andDayData:_dayData];
         
         organizerDayEvents * event = [[organizerDayEvents alloc] init];
         event.eventTitle = dayEvent.eventName;
@@ -101,6 +112,13 @@ NSString  *badFillings = @"Poor health";
     static NSString *CellIdentifier = @"Day Events Cell";    
     organizerDayEventsCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.eventData =  [_events objectAtIndex:indexPath.row];
+    cell.delegate = self;
+        
+    if ([self isCriticalDayStartedRow:indexPath.row]) {
+        self.criticalDayStart = cell.eventState;
+    }else if ([self isCriticalDayEndedRow:indexPath.row]){
+        self.criticalDayEnd = cell.eventState;
+    }
     
     return cell;
 }
@@ -110,6 +128,12 @@ NSString  *badFillings = @"Poor health";
         organizerDayEvents *currentEvent = [_events objectAtIndex:i];
         dayEvent = [DayEvent dayEventWithTitle:currentEvent.eventTitle position:[NSNumber numberWithInt:i] andDayData:_dayData];
         dayEvent.eventStateValue = currentEvent.eventState;
+        
+        if ([self isCriticalDayStartedRow:i]) {
+            dayEvent.eventStateValue = self.criticalDayStart.on;
+        }else if ([self isCriticalDayEndedRow:i]){
+            dayEvent.eventStateValue = self.criticalDayEnd.on;
+        }        
     }
     _dayData.userNews = _myNews.text;
     
@@ -142,4 +166,27 @@ NSString  *badFillings = @"Poor health";
     }    
     return YES;
 }
+
+#pragma mark - organizerDayEventsCell
+- (void)switcherChange:(UISwitch *)switcher
+{
+    if ([switcher isEqual:self.criticalDayStart] && self.criticalDayStart.on) {
+        [self.criticalDayEnd setOn:NO animated:YES];
+    }
+    else if ([switcher isEqual:self.criticalDayEnd] && self.criticalDayEnd.on){
+        [self.criticalDayStart setOn:NO animated:YES];
+    }
+        
+}
+
+- (BOOL)isCriticalDayStartedRow:(NSUInteger)row
+{
+    return [[_labelsTitles objectAtIndex:row] isEqualToString:criticalDaysStarted] ? YES : NO;
+}
+
+- (BOOL)isCriticalDayEndedRow:(NSUInteger)row
+{
+    return [[_labelsTitles objectAtIndex:row] isEqualToString:criticalDaysEnded] ? YES : NO;
+}
+
 @end

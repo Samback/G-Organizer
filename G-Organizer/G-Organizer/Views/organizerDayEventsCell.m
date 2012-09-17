@@ -11,7 +11,6 @@
 
 @interface organizerDayEventsCell()
 
-@property (strong, nonatomic) IBOutlet UISwitch *eventState;
 @property (strong, nonatomic) IBOutlet UILabel *eventName;
 
 @end
@@ -21,10 +20,12 @@
 @synthesize eventState;
 @synthesize eventName;
 @synthesize eventData = _eventData;
+@synthesize delegate = _delegate;
 
 - (IBAction)stateChanged:(UISwitch *)sender
 {
     self.eventData.eventState = sender.on;
+    [self.delegate switcherChange:sender];
 }
 
 - (void)setEventData:(organizerDayEvents *)eventData

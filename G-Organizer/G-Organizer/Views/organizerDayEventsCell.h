@@ -10,8 +10,13 @@
 
 @class organizerDayEvents;
 
-@interface organizerDayEventsCell : UITableViewCell
+@protocol  organizerDayEventsCellDelegate<NSObject>
+- (void)switcherChange:(UISwitch *)switcher;
+@end
 
+@interface organizerDayEventsCell : UITableViewCell
+@property (nonatomic, weak) id<organizerDayEventsCellDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UISwitch *eventState;
 @property (strong, nonatomic) organizerDayEvents *eventData;
 
 @end
