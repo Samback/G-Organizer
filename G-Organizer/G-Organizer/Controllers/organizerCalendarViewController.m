@@ -46,4 +46,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (NSArray*)calendarMonthView:(TKCalendarMonthView *)monthView marksFromDate:(NSDate *)startDate toDate:(NSDate *)lastDate
+{
+    
+}
+
 @end
